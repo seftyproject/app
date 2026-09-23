@@ -1,0 +1,52 @@
+
+.pres-top-header{width:100%;max-width:none;flex-shrink:0}
+.pres-top-header .pres-solution-switcher{position:static;transform:none;width:max-content;max-width:100%;margin:0 auto 16px}
+.pres-brand-row{flex-wrap:wrap;gap:10px 16px}
+.sefty-logo-mark{min-width:0;flex-wrap:wrap;gap:6px 10px}
+.logo-tag,.pres-seq-badge{overflow-wrap:anywhere}
+.sol-toggle-btn{min-width:0;min-height:44px;touch-action:manipulation}
+.btn-home{white-space:nowrap;flex-shrink:0;min-height:44px}
+.btn-ctrl:focus-visible,.sol-toggle-btn:focus-visible{outline:2px solid var(--accent-cyan);outline-offset:3px}
+.pres-ctrl-group{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:900px){
+ .sefty-presentation-overlay{padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ .pres-top-header .pres-solution-switcher{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px;border-radius:16px;margin-bottom:12px}
+ .sol-toggle-btn{flex-direction:column;justify-content:center;gap:4px;padding:8px 6px;border-radius:12px;text-align:center}
+ .sol-pill-badge{font-size:.72rem;white-space:nowrap}
+ .sol-pill-desc{font-size:.65rem;line-height:1.3;overflow-wrap:anywhere}
+ .pres-brand-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px}
+ .sefty-logo-mark{align-items:center}
+ .logo-text{font-size:18px}
+ .logo-tag{font-size:8px;letter-spacing:.5px;line-height:1.4}
+ .pres-seq-badge{grid-column:1 / -1;justify-self:start;font-size:9px}
+ .pres-main-title{font-size:18px}
+ .pres-bottom-bar{gap:8px;flex-wrap:wrap}
+ .pres-bottom-bar .scroll-mouse-hint{display:none}
+ .pres-ctrl-group{width:100%;flex-wrap:nowrap;overflow-x:auto;padding:4px 2px;pointer-events:auto}
+ .pres-ctrl-group .btn-ctrl{flex:0 0 auto;min-height:44px;white-space:nowrap;font-size:11px}
+}
+
+.pres-top-header{display:flex;flex-direction:column}
+.pres-top-header .pres-brand-row{order:0}
+.pres-top-header .pres-solution-switcher{order:1;margin-top:6px}
+.pres-top-header .pres-title-block{order:2}
+
+.pres-top-header{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;height:auto;min-height:0}
+.pres-top-header > .pres-brand-row{grid-row:1;order:initial;margin:0;min-width:0}
+.pres-top-header > .pres-solution-switcher{grid-row:2;order:initial;position:relative;inset:auto;transform:none;margin:0;justify-self:center;width:min(100%,640px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;min-width:0}
+.pres-top-header > .pres-title-block{grid-row:3;order:initial;margin:0;min-width:0}
+.pres-solution-switcher .sol-toggle-btn{min-width:0;max-width:100%;flex-direction:column;justify-content:center;white-space:normal;gap:4px}
+.pres-solution-switcher .sol-pill-desc{white-space:normal;overflow-wrap:anywhere}
+
+.sefty-presentation-overlay{padding-top:max(8px,env(safe-area-inset-top))}
+.pres-top-header{gap:6px}
+.pres-top-header > .pres-solution-switcher{padding:3px 5px}
+.pres-solution-switcher .sol-toggle-btn{padding:5px 8px;gap:2px}
+@media(max-width:900px){
+ .pres-top-header > .pres-brand-row{gap:4px 8px;grid-template-columns:auto minmax(0,1fr) auto;align-items:center}
+ .pres-brand-row .pres-seq-badge{grid-column:3;grid-row:1;max-width:92px;padding:3px 5px;font-size:8px;letter-spacing:.3px;line-height:1.4}
+ .pres-brand-row .btn-home{min-width:80px;padding:6px 10px}
+ .pres-brand-row .logo-text{font-size:16px;letter-spacing:2px}
+ .pres-brand-row .logo-tag{font-size:7px;padding:2px 4px;letter-spacing:.2px}
+ .pres-brand-row .sefty-logo-mark{gap:2px 6px}
+}

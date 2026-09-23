@@ -10,6 +10,7 @@
 
   .btn-home{display:inline-flex;align-items:center;justify-content:center;min-width:100px;flex-shrink:0;white-space:nowrap;text-decoration:none}
 </style>
+<link rel="stylesheet" href="css/presentation-page.css">
 </head>
 <body>
   <div id="app"></div>
@@ -4136,16 +4137,7 @@ void main() {
       </div>
 
       <!-- Top Global Solution Switcher Pill -->
-      <div class="pres-solution-switcher">
-        <button class="sol-toggle-btn ${this.currentSolution==="A"?"active":""}" id="btn-sol-a">
-          <span class="sol-pill-badge">SOLUZIONE A</span>
-          <span class="sol-pill-desc">AURA LINEA Standalone</span>
-        </button>
-        <button class="sol-toggle-btn ${this.currentSolution==="B"?"active":""}" id="btn-sol-b">
-          <span class="sol-pill-badge">SOLUZIONE B</span>
-          <span class="sol-pill-desc">Bracciale + Modulo Borsa</span>
-        </button>
-      </div>
+      
 
       <!-- SVG Dynamic 3D-to-2D Callout Layer -->
       <svg class="pres-callout-svg" id="pres-callout-svg">
@@ -4165,7 +4157,8 @@ void main() {
       </svg>
 
       <!-- Top Header Brand & Phase Indicator -->
-      <header class="pres-top-header" style="top: 70px;">
+      <header class="pres-top-header">
+
         <div class="pres-brand-row">
           <a class="btn-ctrl btn-home" href="index.html" aria-label="Torna alla home di Sefty">← Home</a>
           <div class="sefty-logo-mark">
@@ -4174,6 +4167,17 @@ void main() {
           </div>
           <div class="pres-seq-badge" id="pres-seq-badge">01 / 07 • HERO</div>
         </div>
+
+        <div class="pres-solution-switcher">
+        <button class="sol-toggle-btn ${this.currentSolution==="A"?"active":""}" id="btn-sol-a">
+          <span class="sol-pill-badge">SOLUZIONE A</span>
+          <span class="sol-pill-desc">AURA LINEA Standalone</span>
+        </button>
+        <button class="sol-toggle-btn ${this.currentSolution==="B"?"active":""}" id="btn-sol-b">
+          <span class="sol-pill-badge">SOLUZIONE B</span>
+          <span class="sol-pill-desc">Bracciale + Modulo Borsa</span>
+        </button>
+      </div>
 
         <div class="pres-title-block">
           <h1 class="pres-main-title" id="pres-main-title">SEFTY</h1>
