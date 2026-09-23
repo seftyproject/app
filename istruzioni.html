@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+        document.documentElement.classList.add('js');
+        setTimeout(function () { if (!window.__sefty) document.documentElement.classList.remove('js'); }, 4000);
+    </script>
+
+    <meta name="theme-color" content="#10222f">
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=mobile-3">
+    <script src="javascripts/index.js?v=mobile-2" defer></script>
+
+    <title>Sefty — Demo con Expo Go</title>
+    <meta name="description"
+        content="Istruzioni per configurare e avviare la demo Sefty con Expo Go, comandi disponibili e limiti del prototipo.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"> <!-- disattiva -->
+    <link rel="canonical" href="https://www.sefty.it/demo.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sefty">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:title" content="Sefty — Demo con Expo Go">
+    <meta property="og:description"
+        content="Istruzioni per configurare e avviare la demo Sefty con Expo Go, comandi disponibili e limiti del prototipo.">
+    <meta property="og:image" content="https://www.sefty.it/img/immagine-principale.jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="717">
+    <meta property="og:image:alt" content="Panorama urbano notturno con strade e connessioni illuminate">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sefty — Demo con Expo Go">
+    <meta name="twitter:description"
+        content="Istruzioni per configurare e avviare la demo Sefty con Expo Go, comandi disponibili e limiti del prototipo.">
+    <meta name="twitter:image" content="https://www.sefty.it/img/immagine-principale.jpeg">
+    <meta name="twitter:image:alt" content="Panorama urbano notturno con strade e connessioni illuminate">
+    <meta property="og:url" content="https://www.sefty.it/demo.html">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Sefty","description":"Progetto tecnologico di sicurezza personale, supervisione e rete di supporto.","@id":"https://www.sefty.it/#organization","url":"https://www.sefty.it/"},{"@type":"WebSite","name":"Sefty","inLanguage":"it-IT","@id":"https://www.sefty.it/#website","url":"https://www.sefty.it/","publisher":{"@id":"https://www.sefty.it/#organization"}},{"@type":"WebPage","name":"Sefty — Demo con Expo Go","description":"Istruzioni per configurare e avviare la demo Sefty con Expo Go, comandi disponibili e limiti del prototipo.","inLanguage":"it-IT","@id":"https://www.sefty.it/demo.html#webpage","url":"https://www.sefty.it/demo.html","isPartOf":{"@id":"https://www.sefty.it/#website"},"about":{"@id":"https://www.sefty.it/#organization"},"breadcrumb":{"@id":"https://www.sefty.it/demo.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.sefty.it/demo.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sefty.it/"},{"@type":"ListItem","position":2,"name":"Demo con Expo Go","item":"https://www.sefty.it/demo.html"}]}]}</script>
+    <style>
+        .demo-content {
+            min-width: 0
+        }
+
+        .demo-content code {
+            font-size: .9em;
+            overflow-wrap: anywhere
+        }
+
+        .demo-content pre {
+            padding: 1.4rem;
+            border-radius: var(--radius-md);
+            background: var(--navy-800);
+            color: white;
+            overflow-x: auto
+        }
+
+        .demo-content pre code {
+            color: inherit
+        }
+
+        .demo-table {
+            overflow-x: auto;
+            margin: 1.5rem 0
+        }
+
+        .demo-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left
+        }
+
+        .demo-table th,
+        .demo-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top
+        }
+
+        .demo-table th {
+            background: var(--mist)
+        }
+
+        .demo-content h3 {
+            margin-top: 2.5rem
+        }
+
+        .demo-content li {
+            margin-bottom: .65rem
+        }
+
+        #istruzioni-complete {
+            min-height: 12rem
+        }
+
+        @media(max-width:600px) {
+
+            .demo-table th,
+            .demo-table td {
+                padding: .75rem .5rem
+            }
+
+            .demo-content pre {
+                padding: 1rem
+            }
+        }
+
+        .demo-layout {
+            padding-top: 2rem;
+            padding-bottom: 4rem
+        }
+
+        .demo-layout .tabs-bar {
+            margin-bottom: 2rem
+        }
+
+        .demo-layout .tablist {
+            flex-wrap: wrap
+        }
+
+        .demo-layout [role="tabpanel"][hidden] {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Torna alla home di Sefty">Sefty</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav"
+                aria-label="Apri menu navigazione">
+                <svg class="icon icon-open" viewbox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg><svg class="icon icon-close" viewbox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6 6 18"></path>
+                </svg>
+            </button>
+            <nav class="nav" id="siteNav" aria-label="Menu principale">
+                <ul>
+                    <li><a href="impatto.html">Impatto</a></li>
+                    <li><a href="notte.html">Notte</a></li>
+                    <li><a href="giorno.html">Giorno</a></li>
+                    <li><a href="funzionamento.html">Funzionamento</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="visione.html">Visione</a></li>
+                    <li><a href="progetto.html">Progetto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    </header>
+
+    <main id="contenuto">
+        <div class="page-head rings-light">
+            <div class="wrap">
+                <div>
+                    <nav class="breadcrumbs" aria-label="Percorso"><a href="index.html">Home</a><span
+                            aria-hidden="true"> / </span><span aria-current="page">Demo con Expo Go</span></nav>
+                    <h1><span class="hw"><span style="--w:0">Demo con Expo Go</span></span></h1>
+                    <p class="lead">Preparare e avviare la demo Sefty con Expo Go.</p>
+                </div>
+                <div class="page-art" aria-hidden="true"><svg class="art-svg" viewbox="0 0 360 220"
+                        preserveaspectratio="xMidYMid slice" aria-hidden="true" focusable="false">
+                        <g fill="none" stroke="currentColor" stroke-opacity=".3">
+                            <path d="M180 110 L52 48"></path>
+                            <path d="M180 110 L312 56"></path>
+                            <path d="M180 110 L44 168"></path>
+                            <path d="M180 110 L320 172"></path>
+                            <path d="M180 110 L96 204"></path>
+                            <path d="M180 110 L268 20"></path>
+                        </g>
+                        <g fill="none" stroke="var(--signal)" stroke-width="1.6">
+                            <circle class="rip" style="--delay:0s" cx="180" cy="110" r="46"></circle>
+                            <circle class="rip" style="--delay:0.6s" cx="180" cy="110" r="46"></circle>
+                            <circle class="rip" style="--delay:1.2s" cx="180" cy="110" r="46"></circle>
+                        </g>
+                        <g fill="currentColor">
+                            <circle class="pop" style="--i:0" cx="52" cy="48" r="5"></circle>
+                            <circle class="pop" style="--i:1" cx="312" cy="56" r="5"></circle>
+                            <circle class="pop" style="--i:2" cx="44" cy="168" r="5"></circle>
+                            <circle class="pop" style="--i:3" cx="320" cy="172" r="5"></circle>
+                            <circle class="pop" style="--i:4" cx="96" cy="204" r="5"></circle>
+                            <circle class="pop" style="--i:5" cx="268" cy="20" r="5"></circle>
+                        </g>
+                        <rect x="152" y="-12" width="56" height="84" fill="var(--art-strap)"></rect>
+                        <rect x="152" y="148" width="56" height="84" fill="var(--art-strap)"></rect>
+                        <rect x="138" y="68" width="84" height="84" rx="24" fill="var(--art-solid)"
+                            stroke="currentColor" stroke-width="2"></rect>
+                        <circle cx="180" cy="110" r="24" fill="none" stroke="currentColor" stroke-opacity=".55"
+                            stroke-width="1.5"></circle>
+                        <circle cx="180" cy="110" r="9" fill="var(--signal)"></circle>
+                        <rect x="220" y="98" width="7" height="24" rx="3" fill="var(--signal)"></rect>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="wrap demo-layout">
+            <div class="prose demo-content">
+                <div class="tabs-bar">
+                    <div class="tablist" role="tablist" aria-label="Istruzioni della demo">
+                        <button class="tab" type="button" role="tab" id="tab-riassuntive" data-key="riassuntive"
+                            aria-controls="istruzioni-riassuntive" aria-selected="true">Istruzioni riassuntive</button>
+                        <button class="tab" type="button" role="tab" id="tab-complete" data-key="complete"
+                            aria-controls="istruzioni-complete" aria-selected="false" tabindex="-1">Istruzioni
+                            complete</button>
+                    </div>
+                </div>
+                <section id="istruzioni-riassuntive" class="tabpanel" role="tabpanel" aria-labelledby="tab-riassuntive"
+                    tabindex="0">
+                    <h2>Istruzioni riassuntive</h2>
+                    <p class="callout"><strong>Per preparare e avviare la demo seguire <a
+                                href="GUIDAFACILE.md">GUIDAFACILE.md</a>.</strong></p>
+                    <p>La procedura usa un computer Windows o Mac con Docker e Node.js e telefoni iPhone/Android con
+                        Expo Go. I telefoni possono usare reti diverse. Il computer deve rimanere acceso e connesso.</p>
+                    <h3>Prima configurazione</h3>
+                    <ol>
+                        <li>Installare Node.js 24 LTS, Docker Desktop ed Expo Go compatibile con SDK 57.</li>
+                        <li>Creare un <a href="https://expo.dev/signup">account Expo dedicato a Sefty</a>.</li>
+                        <li>Aprire un terminale nella cartella DemoSefty ed eseguire <code>npm run demo:login</code>.
+                        </li>
+                        <li>Accedere allo stesso account Expo in Expo Go su tutti i telefoni.</li>
+                    </ol>
+                    <p>Gli account usati <strong>dentro Sefty</strong> devono essere diversi per provare contatti, SOS e
+                        gruppi. Sono indipendenti dall'account Expo.</p>
+                    <h3>Comandi</h3>
+                    <p>Da DemoSefty, con Docker avviato:</p>
+                    <pre><code>npm run demo</code></pre>
+                    <p>Scansionare il QR corrente con i telefoni e mantenere Sefty in primo piano.</p>
+                    <div class="demo-table" role="region" aria-label="Comandi della demo" tabindex="0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Comando</th>
+                                    <th scope="col">Funzione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>npm run demo:login</code></td>
+                                    <td>Installare le dipendenze mancanti e accedere all'account Expo</td>
+                                </tr>
+                                <tr>
+                                    <td><code>npm run demo:account</code></td>
+                                    <td>Mostrare l'account Expo del computer</td>
+                                </tr>
+                                <tr>
+                                    <td><code>npm run demo</code></td>
+                                    <td>Controllare l'account, avviare servizi e tunnel, generare il QR</td>
+                                </tr>
+                                <tr>
+                                    <td><code>npm run demo:check</code></td>
+                                    <td>Controllare backend e tunnel mentre la demo è attiva</td>
+                                </tr>
+                                <tr>
+                                    <td><code>npm run demo:stop</code></td>
+                                    <td>Fermare i servizi Docker conservando il database</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Per terminare, premere Ctrl+C nel terminale della demo e poi eseguire
+                        <code>npm run demo:stop</code>. Su Windows, se PowerShell blocca npm.ps1, usare
+                        <code>npm.cmd</code> al posto di <code>npm</code>.</p>
+                    <h3>Dati e limiti</h3>
+                    <p>Il database persiste sul computer che esegue Docker. Copiare il progetto su un'altra macchina non
+                        trasferisce gli account Sefty. Non eliminare il volume del database e non sovrascrivere il file
+                        <code>.env</code> di un'installazione esistente.</p>
+                    <p>La demo usa GPS e comunicazioni in primo piano. Push remote ad app chiusa, GPS in background e
+                        hardware Bluetooth non sono inclusi nel collaudo. Il timer di rientro è eseguito sul telefono.
+                        Il recupero password non invia email reali. La guida contiene la sequenza da provare prima della
+                        presentazione.</p>
+                    <h3>Contenuto della cartella</h3>
+                    <div class="demo-table" role="region" aria-label="Contenuto della cartella" tabindex="0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Percorso</th>
+                                    <th scope="col">Contenuto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="GUIDAFACILE.md">GUIDAFACILE.md</a></td>
+                                    <td>Account Expo, primo avvio, prova generale e problemi comuni</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="REVISIONE_I3P.md">REVISIONE_I3P.md</a></td>
+                                    <td>Stato delle verifiche e limiti del collaudo</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="sefty-backend/README.md">sefty-backend/README.md</a></td>
+                                    <td>Manutenzione tecnica, test e tunnel alternativi</td>
+                                </tr>
+                                <tr>
+                                    <td>sefty-mobile</td>
+                                    <td>App React Native / Expo SDK 57</td>
+                                </tr>
+                                <tr>
+                                    <td>sefty-backend</td>
+                                    <td>API, database, servizi Docker e dashboard web</td>
+                                </tr>
+                                <tr>
+                                    <td>scripts</td>
+                                    <td>Avvio della demo e test del launcher</td>
+                                </tr>
+                                <tr>
+                                    <td>exports, presentazione_commercialista, fonts</td>
+                                    <td>Presentazioni e materiali grafici</td>
+                                </tr>
+                                <tr>
+                                    <td>TESTI_SITO_WEB_UFFICIALI.md</td>
+                                    <td>Testi del progetto per sito e comunicazione</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>I profili in sefty-mobile/eas.json sono predisposizioni per build future e non si usano nella
+                        procedura Expo Go. Le credenziali Expo vanno inserite nel login, mai nei file del progetto.</p>
+                    <h3>Licenza</h3>
+                    <p>Software proprietario. Copyright (c) 2026 Fabrizio Fernando D'Amico. Tutti i diritti riservati.
+                        Vedere <a href="LICENSE">LICENSE</a>. Il progetto è un prototipo per sviluppo e valutazione;
+                        restano applicabili le condizioni della licenza.</p>
+                </section>
+                <section id="istruzioni-complete" class="tabpanel" role="tabpanel" aria-labelledby="tab-complete"
+                    tabindex="0" hidden>
+                    <h2>Istruzioni complete</h2>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div><a class="brand" href="index.html">Sefty</a>
+                    <p class="footer-tagline">dove la connessione diventa protezione</p>
+                </div>
+                <nav class="footer-nav-wide" aria-label="Esplora Sefty">
+                    <h2>Esplora Sefty</h2>
+                    <ul class="footer-links">
+                        <li><a href="impatto.html">Impatto</a></li>
+                        <li><a href="notte.html">Notte</a></li>
+                        <li><a href="giorno.html">Giorno</a></li>
+                        <li><a href="funzionamento.html">Funzionamento</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="visione.html">Visione</a></li>
+                        <li><a href="progetto.html">Progetto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="legal">Sefty</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

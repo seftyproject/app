@@ -368,7 +368,7 @@ function initDay() {
     const update=()=>{
         const radius=Number(range.value);zone.setAttribute('r',String(radius));let outside=0;
         dots.forEach((dot,i)=>{const out=Math.hypot(points[i][0]-300,points[i][1]-155)>radius;dot.classList.toggle('is-out',out);if(out)outside++;});
-        const message=outside?`${outside} ${outside===1?'partecipante fuori':'partecipanti fuori'} dall’area: verifica del Tutor.`:'Tutti i partecipanti sono nell’area.';
+        const message=outside?`${outside} ${outside===1?'partecipante è fuori':'partecipanti sono fuori'} dal raggio: il tutor riceve una notifica e una vibrazione.`:'Tutti i partecipanti sono nell’area.';
         widget.querySelector('[data-alert-text]').textContent=message;
         widget.querySelector('[data-alert]').classList.toggle('is-visible',outside>0);
         const status=widget.querySelector('#dayStatus');

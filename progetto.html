@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        
+
         document.documentElement.classList.add('js');
         setTimeout(function () { if (!window.__sefty) document.documentElement.classList.remove('js'); }, 4000);
     </script>
@@ -16,77 +16,546 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&amp;display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=mobile-2">
     <script src="javascripts/index.js?v=mobile-2" defer></script>
 
     <title>Il progetto Sefty | Architettura, sviluppo e validazione</title>
-    <meta name="description" content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
+    <meta name="description"
+        content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"> <!-- disattiva -->
     <link rel="canonical" href="https://www.sefty.it/progetto.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sefty">
     <meta property="og:locale" content="it_IT">
     <meta property="og:title" content="Il progetto Sefty | Architettura, sviluppo e validazione">
-    <meta property="og:description" content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
+    <meta property="og:description"
+        content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
     <meta property="og:image" content="https://www.sefty.it/img/immagine-principale.jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="717">
     <meta property="og:image:alt" content="Panorama urbano notturno con strade e connessioni illuminate">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Il progetto Sefty | Architettura, sviluppo e validazione">
-    <meta name="twitter:description" content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
+    <meta name="twitter:description"
+        content="Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.">
     <meta name="twitter:image" content="https://www.sefty.it/img/immagine-principale.jpeg">
     <meta name="twitter:image:alt" content="Panorama urbano notturno con strade e connessioni illuminate">
     <meta property="og:url" content="https://www.sefty.it/progetto.html">
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Sefty","description":"Progetto tecnologico di sicurezza personale, supervisione e rete di supporto.","@id":"https://www.sefty.it/#organization","url":"https://www.sefty.it/"},{"@type":"WebSite","name":"Sefty","inLanguage":"it-IT","@id":"https://www.sefty.it/#website","url":"https://www.sefty.it/","publisher":{"@id":"https://www.sefty.it/#organization"}},{"@type":"WebPage","name":"Il progetto Sefty | Architettura, sviluppo e validazione","description":"Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.","inLanguage":"it-IT","@id":"https://www.sefty.it/progetto.html#webpage","url":"https://www.sefty.it/progetto.html","isPartOf":{"@id":"https://www.sefty.it/#website"},"about":{"@id":"https://www.sefty.it/#organization"},"breadcrumb":{"@id":"https://www.sefty.it/progetto.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.sefty.it/progetto.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sefty.it/"},{"@type":"ListItem","position":2,"name":"Progetto","item":"https://www.sefty.it/progetto.html"}]}]}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Sefty","description":"Progetto tecnologico di sicurezza personale, supervisione e rete di supporto.","@id":"https://www.sefty.it/#organization","url":"https://www.sefty.it/"},{"@type":"WebSite","name":"Sefty","inLanguage":"it-IT","@id":"https://www.sefty.it/#website","url":"https://www.sefty.it/","publisher":{"@id":"https://www.sefty.it/#organization"}},{"@type":"WebPage","name":"Il progetto Sefty | Architettura, sviluppo e validazione","description":"Conosci il progetto Sefty: base software, dispositivo wearable, integrazione hardware e rete di supporto. Stato attuale e percorso verso il prodotto.","inLanguage":"it-IT","@id":"https://www.sefty.it/progetto.html#webpage","url":"https://www.sefty.it/progetto.html","isPartOf":{"@id":"https://www.sefty.it/#website"},"about":{"@id":"https://www.sefty.it/#organization"},"breadcrumb":{"@id":"https://www.sefty.it/progetto.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.sefty.it/progetto.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sefty.it/"},{"@type":"ListItem","position":2,"name":"Progetto","item":"https://www.sefty.it/progetto.html"}]}]}</script>
 </head>
 
 <body>
     <a class="skip-link" href="#main">Vai al contenuto</a>
-<header class="site-header">
+    <header class="site-header">
         <div class="wrap header-inner">
             <a class="brand" href="index.html" aria-label="Torna alla home di Sefty">Sefty</a>
-            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Apri menu navigazione">
-                <svg class="icon icon-open" viewbox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="icon icon-close" viewbox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav"
+                aria-label="Apri menu navigazione">
+                <svg class="icon icon-open" viewbox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg><svg class="icon icon-close" viewbox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6 6 18"></path>
+                </svg>
             </button>
-            <nav class="nav" id="siteNav" aria-label="Menu principale"><ul><li><a href="impatto.html">Impatto</a></li><li><a href="notte.html">Notte</a></li><li><a href="giorno.html">Giorno</a></li><li><a href="funzionamento.html">Funzionamento</a></li><li><a href="community.html">Community</a></li><li><a href="visione.html">Visione</a></li><li><a href="progetto.html" aria-current="page">Progetto</a></li></ul></nav>
+            <nav class="nav" id="siteNav" aria-label="Menu principale">
+                <ul>
+                    <li><a href="impatto.html">Impatto</a></li>
+                    <li><a href="notte.html">Notte</a></li>
+                    <li><a href="giorno.html">Giorno</a></li>
+                    <li><a href="funzionamento.html">Funzionamento</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="visione.html">Visione</a></li>
+                    <li><a href="progetto.html" aria-current="page">Progetto</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
     </header>
     <main id="main">
         <div class="page-head rings-light">
             <div class="wrap">
-                <div><nav class="breadcrumbs" aria-label="Percorso"><a href="index.html">Home</a><span aria-hidden="true"> / </span><span aria-current="page">Progetto</span></nav>
+                <div>
+                    <nav class="breadcrumbs" aria-label="Percorso"><a href="index.html">Home</a><span
+                            aria-hidden="true"> / </span><span aria-current="page">Progetto</span></nav>
                     <span class="kicker">Sefty</span>
-                    <h1><span class="hw"><span style="--w:0">Il</span></span> <span class="hw"><span style="--w:1">progetto</span></span> <span class="hw"><span style="--w:2">alla</span></span> <span class="hw"><span style="--w:3">base</span></span> <span class="hw"><span style="--w:4">del</span></span> <span class="hw"><span style="--w:5">sistema</span></span> </h1><p class="lead">Sefty è un progetto tecnologico dedicato alla sicurezza personale, sviluppato con l'obiettivo di integrare interazione fisica, applicazione, infrastruttura digitale e rete di supporto all'interno di un unico sistema.</p></div>
-                <div class="page-art" aria-hidden="true"><svg class="art-svg" viewbox="0 0 360 220" preserveaspectratio="xMidYMid slice" aria-hidden="true" focusable="false"><rect x="62" y="14" width="28" height="70" fill="var(--art-strap)"></rect>
-<rect x="62" y="136" width="28" height="70" fill="var(--art-strap)"></rect>
-<rect x="44" y="78" width="64" height="64" rx="18" fill="var(--art-solid)" stroke="currentColor" stroke-width="2"></rect>
-<circle cx="76" cy="110" r="8" fill="var(--signal)"></circle>
-<circle class="rip" cx="76" cy="110" r="14" fill="none" stroke="var(--signal)" stroke-width="1.5"></circle>
-<path class="flow-line" d="M122 110 H226" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-<circle class="pop" cx="174" cy="110" r="6" fill="var(--signal)" stroke="currentColor" stroke-width="1.5"></circle>
-<rect x="236" y="46" width="80" height="128" rx="16" fill="var(--art-solid)" stroke="currentColor" stroke-width="2"></rect>
-<rect x="246" y="60" width="60" height="70" rx="6" fill="currentColor" fill-opacity=".08"></rect>
-<path class="pop" d="M276 76c-8 0-14 6-14 14 0 10 14 24 14 24s14-14 14-24c0-8-6-14-14-14Z" fill="var(--signal)" stroke="currentColor" stroke-width="1.5"></path>
-<circle cx="276" cy="90" r="4.5" fill="var(--art-solid)"></circle>
-<rect x="248" y="142" width="58" height="6" rx="3" fill="currentColor" fill-opacity=".28"></rect>
-<rect x="248" y="154" width="36" height="6" rx="3" fill="currentColor" fill-opacity=".28"></rect></svg></div>
+                    <h1><span class="hw"><span style="--w:0">Il</span></span> <span class="hw"><span
+                                style="--w:1">progetto</span></span> <span class="hw"><span
+                                style="--w:2">alla</span></span> <span class="hw"><span style="--w:3">base</span></span>
+                        <span class="hw"><span style="--w:4">del</span></span> <span class="hw"><span
+                                style="--w:5">sistema</span></span> </h1>
+                    <p class="lead">Sefty è un progetto tecnologico dedicato alla sicurezza personale, sviluppato con
+                        l'obiettivo di integrare interazione fisica, applicazione, infrastruttura digitale e rete di
+                        supporto all'interno di un unico sistema.</p>
+                </div>
+                <div class="page-art" aria-hidden="true"><svg class="art-svg" viewbox="0 0 360 220"
+                        preserveaspectratio="xMidYMid slice" aria-hidden="true" focusable="false">
+                        <rect x="62" y="14" width="28" height="70" fill="var(--art-strap)"></rect>
+                        <rect x="62" y="136" width="28" height="70" fill="var(--art-strap)"></rect>
+                        <rect x="44" y="78" width="64" height="64" rx="18" fill="var(--art-solid)" stroke="currentColor"
+                            stroke-width="2"></rect>
+                        <circle cx="76" cy="110" r="8" fill="var(--signal)"></circle>
+                        <circle class="rip" cx="76" cy="110" r="14" fill="none" stroke="var(--signal)"
+                            stroke-width="1.5"></circle>
+                        <path class="flow-line" d="M122 110 H226" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round"></path>
+                        <circle class="pop" cx="174" cy="110" r="6" fill="var(--signal)" stroke="currentColor"
+                            stroke-width="1.5"></circle>
+                        <rect x="236" y="46" width="80" height="128" rx="16" fill="var(--art-solid)"
+                            stroke="currentColor" stroke-width="2"></rect>
+                        <rect x="246" y="60" width="60" height="70" rx="6" fill="currentColor" fill-opacity=".08">
+                        </rect>
+                        <path class="pop" d="M276 76c-8 0-14 6-14 14 0 10 14 24 14 24s14-14 14-24c0-8-6-14-14-14Z"
+                            fill="var(--signal)" stroke="currentColor" stroke-width="1.5"></path>
+                        <circle cx="276" cy="90" r="4.5" fill="var(--art-solid)"></circle>
+                        <rect x="248" y="142" width="58" height="6" rx="3" fill="currentColor" fill-opacity=".28">
+                        </rect>
+                        <rect x="248" y="154" width="36" height="6" rx="3" fill="currentColor" fill-opacity=".28">
+                        </rect>
+                    </svg></div>
             </div>
         </div>
         <div class="wrap layout">
             <nav class="toc" aria-label="In questa pagina">
-                <details class="toc-disclosure"><summary>In questa pagina</summary><ul><li><a href="#s1">1. Introduzione</a></li><li><a href="#s2">2. Il problema progettuale</a></li><li><a href="#s3">3. La struttura complessiva del sistema</a></li><li><a href="#s4">4. La base software e l'architettura digitale</a></li><li><a href="#s5">5. Il dispositivo standalone</a></li><li><a href="#s6">6. L'integrazione hardware/software</a></li><li><a href="#s7">7. La gestione degli eventi</a></li><li><a href="#s8">8. La rete di supporto all'interno dell'architettura</a></li><li><a href="#s9">9. Una piattaforma comune per più contesti</a></li><li><a href="#s10">10. Stato attuale del progetto</a></li><li><a href="#s11">11. Dalla progettazione alla validazione</a></li><li><a href="#s12">12. Gli aspetti da validare</a></li><li><a href="#s13">13. Privacy e sicurezza dell'architettura</a></li><li><a href="#s14">14. Il percorso di prodotto</a></li><li><a href="#s15">15. Il valore dell'architettura Sefty</a></li><li><a href="#s16">16. La logica complessiva del progetto</a></li><li><a href="#s17">17. Progetto, sviluppo e risultato: una distinzione fondamentale</a></li><li><a href="#s18">18. Conclusione</a></li></ul></details></nav>
-            <div class="prose"><section id="s1"><h2>1. Introduzione</h2><p>Sefty è un progetto tecnologico dedicato alla sicurezza personale, sviluppato con l'obiettivo di integrare interazione fisica, applicazione, infrastruttura digitale e rete di supporto all'interno di un unico sistema.</p><p>Il progetto nasce dall'esigenza di rendere più semplice l'attivazione di una richiesta di supporto e di organizzare in modo strutturato ciò che avviene successivamente: gestione dell'evento, comunicazione delle informazioni necessarie e coinvolgimento della rete prevista dal sistema.</p><p>Sefty non viene quindi concepito come un singolo prodotto hardware né come una semplice applicazione mobile.</p><p>La sua caratteristica principale è l'integrazione di più livelli tecnologici e relazionali, progettati per evolvere progressivamente da una base software già sviluppata verso un sistema hardware/software integrato, sperimentato in condizioni reali e successivamente industrializzabile.</p><p>Il progetto deve pertanto essere letto come un percorso nel quale architettura, prodotto, validazione e sviluppo del modello di utilizzo procedono in modo progressivo e interdipendente.</p></section><section id="s2"><h2>2. Il problema progettuale</h2><p>Una situazione di difficoltà può richiedere una risposta rapida proprio quando l'interazione con uno smartphone può risultare poco agevole.</p><p>Utilizzare il telefono può infatti richiedere di estrarlo, sbloccarlo, individuare l'applicazione e compiere una serie di azioni. In una situazione di stress o di pericolo, questa sequenza può rappresentare un ostacolo.</p><p>Il problema affrontato da Sefty è quindi innanzitutto rendere più accessibile il punto di attivazione della richiesta di supporto.</p><p>A questo problema se ne aggiunge uno di natura sistemica.</p><p>L'attivazione di un evento costituisce soltanto l'inizio del processo. Perché il sistema abbia una reale utilità, la richiesta deve poter essere gestita attraverso un'infrastruttura capace di organizzare informazioni, comunicazioni e destinatari.</p><p>Il progetto affronta quindi due esigenze collegate:</p><p>semplificare l'interazione nel momento dell'attivazione</p><p>e</p><p>strutturare ciò che avviene dopo l'attivazione.</p><p>Questa seconda componente è ciò che porta Sefty oltre il concetto di semplice dispositivo di allarme.</p></section><section id="s3"><h2>3. La struttura complessiva del sistema</h2><p>L'architettura di Sefty può essere ricondotta a quattro livelli principali:</p><h3>3.1 Interfaccia fisica</h3><p>Il dispositivo wearable rappresenta il punto di interazione diretta con la persona.</p><h3>3.2 Livello applicativo</h3><p>L'applicazione permette di configurare e utilizzare le diverse funzioni del sistema.</p><h3>3.3 Infrastruttura digitale</h3><p>I servizi software gestiscono utenti, eventi, comunicazioni e informazioni necessarie al funzionamento dell'ecosistema.</p><h3>3.4 Rete di supporto</h3><p>Il sistema mette in relazione la persona con la propria rete di fiducia e, secondo l'evoluzione prevista, con una dimensione comunitaria.</p><p>La relazione tra questi livelli può essere sintetizzata:</p><p class="flow-label">PERSONA → DISPOSITIVO → APPLICAZIONE → INFRASTRUTTURA → RETE DI SUPPORTO</p><p>La forza progettuale di Sefty risiede nella possibilità di far funzionare questi livelli come parti di una stessa architettura.</p></section><section id="s4"><h2>4. La base software e l'architettura digitale</h2><p>La componente software costituisce la base sulla quale viene costruito il progetto.</p><p>L'applicazione rappresenta il livello attraverso il quale l'utente interagisce con il sistema e vengono organizzate le principali funzioni digitali.</p><p>A questa si affianca l'infrastruttura necessaria alla gestione dei dati, degli utenti, degli eventi e delle comunicazioni.</p><p>Questa impostazione permette di sviluppare e verificare progressivamente la logica del sistema anche prima della completa disponibilità del dispositivo hardware definitivo.</p><p>La base software rappresenta quindi un punto concreto di partenza del progetto, mentre l'integrazione con l'hardware standalone costituisce una successiva fase di sviluppo.</p><p>Questa distinzione è importante per rappresentare correttamente lo stato attuale: l'esistenza della componente software non equivale alla disponibilità di un prodotto hardware già industrializzato.</p></section><section id="s5"><h2>5. Il dispositivo standalone</h2><p>Il wearable rappresenta l'evoluzione hardware centrale del progetto.</p><p>La sua funzione è rendere fisicamente accessibile il sistema di sicurezza attraverso un'interfaccia dedicata e indipendente dall'interazione diretta con lo smartphone nel momento dell'attivazione.</p><p>Il dispositivo è stato definito a livello funzionale e architetturale, mentre la trasformazione in un prodotto completo richiede ancora attività di:</p><ul class="rules"><li>progettazione elettronica;</li><li>integrazione dei componenti;</li><li>sviluppo e integrazione firmware;</li><li>progettazione meccanica;</li><li>miniaturizzazione;</li><li>prototipazione;</li><li>test;</li><li>validazione;</li><li>industrializzazione.</li></ul><p>Di conseguenza, il wearable deve essere considerato una componente progettata e in fase di sviluppo, non un prodotto industrializzato già disponibile.</p><p>Questo passaggio rappresenta una delle principali attività tecnologiche della fase successiva del progetto.</p></section><section id="s6"><h2>6. L'integrazione hardware/software</h2><p>Il valore del dispositivo non risiede nella sua autonomia considerata isolatamente, ma nella sua integrazione con l'infrastruttura digitale.</p><p>Il sistema deve permettere una relazione coerente tra:</p><p class="flow-label">DISPOSITIVO</p><p>interazione fisica;</p><p class="flow-label">CONNETTIVITÀ</p><p>trasmissione delle informazioni;</p><p class="flow-label">INFRASTRUTTURA</p><p>gestione dell'evento;</p><p class="flow-label">APP</p><p>interazione e configurazione;</p><p class="flow-label">RETE</p><p>ricezione e gestione delle informazioni previste.</p><p>L'obiettivo della fase di integrazione è quindi trasformare componenti sviluppate separatamente in un unico sistema hardware/software funzionante e verificabile.</p><p>È proprio questa fase a determinare il passaggio da un'architettura progettata a un prodotto concretamente testabile nelle condizioni d'uso previste.</p></section><section id="s7"><h2>7. La gestione degli eventi</h2><p>Il sistema Sefty è progettato attorno alla gestione strutturata degli eventi di sicurezza.</p><p>In termini generali, il processo comprende:</p><p class="flow-label">attivazione → conferma → apertura dell'evento → comunicazione → gestione → chiusura</p><p>L'architettura prevede meccanismi destinati a ridurre il rischio di attivazioni involontarie e a garantire che le informazioni vengano gestite secondo le modalità previste.</p><p>L'obiettivo non è soltanto generare una segnalazione, ma creare un evento strutturato, al quale possono essere associate informazioni e azioni coerenti con lo stato del sistema.</p><p>La qualità di questo processo dovrà essere verificata attraverso test tecnici e successivamente attraverso l'utilizzo in condizioni reali.</p></section><section id="s8"><h2>8. La rete di supporto all'interno dell'architettura</h2><p>La componente umana rappresenta un livello essenziale del sistema.</p><p>Sefty collega infatti la gestione digitale dell'evento a una rete di supporto, il cui primo livello è costituito dalle persone individuate dall'utente.</p><p>La Community, approfondita nel relativo capitolo, rappresenta una possibile estensione del modello verso una dimensione più ampia.</p><p>Nel progetto complessivo questa componente ha una funzione precisa: portare l'evento dalla dimensione puramente tecnologica alla dimensione della gestione e del supporto.</p><p>Il sistema può quindi essere rappresentato come:</p><p class="flow-label">evento → informazioni → rete → supporto</p><p>La rete non sostituisce la tecnologia e la tecnologia non sostituisce la rete. Il progetto nasce proprio dalla loro integrazione.</p></section><section id="s9"><h2>9. Una piattaforma comune per più contesti</h2><p>Un elemento importante dell'architettura è la possibilità di utilizzare una base tecnologica comune per contesti differenti.</p><p>La stessa infrastruttura può supportare progressivamente:</p><ul class="rules"><li>sicurezza personale;</li><li>gestione della rete di fiducia;</li><li>supervisione di gruppi;</li><li>utilizzo in contesti organizzati;</li><li>Community territoriale.</li></ul><p>Questo consente di evitare la costruzione di sistemi completamente separati e di sviluppare invece un'architettura comune sulla quale possono essere costruite diverse modalità di utilizzo.</p><p>La differenziazione tra i diversi contesti avviene quindi principalmente attraverso funzionalità, regole e configurazioni, mantenendo una base tecnologica condivisa.</p></section><section id="s10"><h2>10. Stato attuale del progetto</h2><p>Per rappresentare correttamente Sefty è fondamentale distinguere tra diversi livelli di maturità.</p><p>Componenti già sviluppate</p><p>La componente software costituisce la base concreta attuale del progetto e permette di sviluppare e verificare le principali logiche dell'ecosistema.</p><p>Componenti progettate</p><p>L'architettura del dispositivo standalone e l'integrazione hardware/software sono state definite come direzione di sviluppo, con requisiti e componenti da trasformare progressivamente in prototipi funzionanti.</p><p>Componenti da sviluppare e validare</p><p>La realizzazione fisica del wearable, la sua integrazione completa, i test tecnici, la sperimentazione sul campo e la successiva industrializzazione costituiscono attività ancora necessarie.</p><p>Evoluzioni successive</p><p>L'estensione della rete territoriale e l'eventuale utilizzo di informazioni aggregate rappresentano livelli evolutivi che dovranno essere sperimentati e verificati.</p><p>Questa distinzione permette di evitare una sovrapposizione tra progetto, sviluppo e risultato già dimostrato.</p></section><section id="s11"><h2>11. Dalla progettazione alla validazione</h2><p>Il progetto Sefty deve essere sviluppato attraverso una progressione nella quale ogni fase consenta di verificare quella precedente.</p><p>Il percorso può essere sintetizzato in:</p><p class="flow-label">PROGETTAZIONE</p><p class="flow-label">definizione dell'architettura e dei requisiti;</p><p class="flow-arrow">↓</p><p class="flow-label">SVILUPPO</p><p class="flow-label">realizzazione delle componenti software e hardware;</p><p class="flow-arrow">↓</p><p class="flow-label">INTEGRAZIONE</p><p class="flow-label">connessione tra dispositivo, applicazione e infrastruttura;</p><p class="flow-arrow">↓</p><p class="flow-label">TEST TECNICI</p><p class="flow-label">verifica del funzionamento delle componenti;</p><p class="flow-arrow">↓</p><p class="flow-label">SPERIMENTAZIONE</p><p class="flow-label">utilizzo in contesti reali e raccolta dei risultati;</p><p class="flow-arrow">↓</p><p class="flow-label">VALIDAZIONE</p><p class="flow-label">verifica dell'effettiva utilità e affidabilità del sistema;</p><p class="flow-arrow">↓</p><p class="flow-label">INDUSTRIALIZZAZIONE</p><p>ottimizzazione del prodotto, dei processi e dei costi.</p><p>Questo percorso è fondamentale perché una funzionalità progettata non equivale automaticamente a una funzionalità validata.</p></section><section id="s12"><h2>12. Gli aspetti da validare</h2><p>La validazione del progetto non riguarda soltanto il corretto funzionamento elettronico o software.</p><p>Deve verificare l'interazione dell'intero sistema.</p><p>Tra gli aspetti principali rientrano:</p><ul class="rules"><li>affidabilità della connettività;</li><li>corretto funzionamento degli eventi;</li><li>affidabilità delle notifiche;</li><li>gestione delle attivazioni involontarie;</li><li>autonomia e comportamento del dispositivo;</li><li>esperienza dell'utente;</li><li>percezione della sicurezza;</li><li>comportamento della rete di supporto;</li><li>adeguatezza delle modalità di utilizzo;</li><li>sostenibilità del prodotto.</li></ul><p>Questa impostazione permette di considerare Sefty come un sistema socio-tecnico, nel quale la validazione deve comprendere tecnologia, comportamento dell'utente e condizioni reali di utilizzo.</p></section><section id="s13"><h2>13. Privacy e sicurezza dell'architettura</h2><p>La gestione della sicurezza personale comporta il trattamento di informazioni che devono essere protette in modo coerente con la funzione del sistema.</p><p>Per questo privacy e sicurezza dei dati devono essere integrate nell'architettura fin dalle fasi di progettazione.</p><p>I principali aspetti da considerare comprendono:</p><ul class="rules"><li>minimizzazione dei dati;</li><li>gestione degli accessi;</li><li>autorizzazioni;</li><li>protezione delle comunicazioni;</li><li>sicurezza dell'infrastruttura;</li><li>gestione delle informazioni relative alla posizione;</li><li>distinzione tra informazioni personali e dati aggregati.</li></ul><p>L'obiettivo è costruire un sistema nel quale l'informazione necessaria alla sicurezza sia disponibile a chi ne ha effettivamente bisogno, evitando accessi non necessari.</p><p>Questo principio deve accompagnare sia l'evoluzione software sia quella hardware.</p></section><section id="s14"><h2>14. Il percorso di prodotto</h2><p>Il passaggio da progetto tecnologico a prodotto richiede una serie di trasformazioni successive.</p><p>Il percorso previsto può essere sintetizzato in:</p><p class="flow-label">ARCHITETTURA</p><p class="flow-arrow">↓</p><p class="flow-label">PROTOTIPO</p><p class="flow-arrow">↓</p><p class="flow-label">INTEGRAZIONE</p><p class="flow-arrow">↓</p><p class="flow-label">TEST</p><p class="flow-arrow">↓</p><p class="flow-label">PILOTA</p><p class="flow-arrow">↓</p><p class="flow-label">INDUSTRIALIZZAZIONE</p><p class="flow-arrow">↓</p><p class="flow-label">MERCATO</p><p>Ogni fase introduce requisiti differenti.</p><p>Un prototipo deve dimostrare il funzionamento.</p><p>Un pilota deve permettere di verificare il comportamento del sistema in condizioni reali.</p><p>Un prodotto industriale deve aggiungere affidabilità, ripetibilità, sostenibilità dei costi, conformità e capacità produttiva.</p><p>Per questo il progetto non considera la realizzazione del primo prototipo come il punto di arrivo, ma come un passaggio necessario verso la costruzione di un prodotto completo.</p></section><section id="s15"><h2>15. Il valore dell'architettura Sefty</h2><p>Il valore del progetto risiede nella possibilità di integrare in un unico sistema elementi che, separatamente, risolverebbero soltanto parti del problema.</p><p>Il dispositivo rende accessibile l'interazione.</p><p>L'applicazione organizza l'esperienza digitale.</p><p>L'infrastruttura gestisce eventi e comunicazioni.</p><p>La rete di supporto introduce la componente umana.</p><p>Le diverse modalità di utilizzo estendono l'architettura a contesti differenti.</p><p>La Community rappresenta una possibile evoluzione della rete.</p><p>La dimensione territoriale costituisce una prospettiva successiva.</p><p>Il progetto consiste quindi nella costruzione e nell'integrazione progressiva di questi livelli, mantenendo una base tecnologica comune.</p></section><section id="s16"><h2>16. La logica complessiva del progetto</h2><p>L'intero sistema può essere sintetizzato attraverso questa architettura:</p><p class="flow-label">PERSONA</p><p class="flow-arrow">↓</p><p class="flow-label">DISPOSITIVO</p><p class="flow-arrow">↓</p><p class="flow-label">APPLICAZIONE</p><p class="flow-arrow">↓</p><p class="flow-label">INFRASTRUTTURA DIGITALE</p><p class="flow-arrow">↓</p><p class="flow-label">EVENTO</p><p class="flow-arrow">↓</p><p class="flow-label">RETE DI SUPPORTO</p><p class="flow-arrow">↓</p><p class="flow-label">CONTESTO</p><p class="flow-arrow">↓</p><p class="flow-label">EVOLUZIONE DEL SISTEMA</p><p>La sequenza evidenzia il principio centrale del progetto: ogni componente deve svolgere una funzione specifica e contribuire al funzionamento complessivo.</p><p>Sefty non nasce quindi dalla somma di prodotti indipendenti, ma dalla progettazione di un sistema nel quale hardware, software, comunicazione e rete siano progettati per interagire.</p></section><section id="s17"><h2>17. Progetto, sviluppo e risultato: una distinzione fondamentale</h2><p>Per mantenere una rappresentazione corretta dello stato di Sefty è necessario distinguere tre livelli.</p><p>Ciò che costituisce la base attuale</p><p>La componente software e l'architettura digitale rappresentano il punto concreto dal quale il progetto prosegue.</p><p>Ciò che è stato progettato</p><p>L'architettura hardware, l'integrazione del wearable e le successive evoluzioni del sistema definiscono il percorso tecnologico.</p><p>Ciò che deve ancora essere dimostrato</p><p>Affidabilità complessiva, comportamento del dispositivo in condizioni reali, validazione dell'esperienza, industrializzazione e risposta del mercato devono essere oggetto di successive verifiche.</p><p>Questa distinzione non riduce l'ambizione del progetto.</p><p>Al contrario, permette di presentare Sefty in modo realistico, verificabile e coerente con il percorso necessario per trasformare una progettazione tecnologica in un prodotto.</p></section><section id="s18"><h2>18. Conclusione</h2><p>Il progetto alla base di Sefty consiste nella costruzione progressiva di un sistema integrato di sicurezza personale, nel quale una componente fisica, una piattaforma digitale, un'infrastruttura software e una rete di supporto operano secondo una logica comune.</p><p>Il punto di partenza concreto è rappresentato dalla base software e dall'architettura del sistema.</p><p>Il passaggio successivo consiste nell'integrare e validare il dispositivo standalone, verificare il funzionamento dell'intero sistema in condizioni reali e affrontare progressivamente le attività necessarie alla sua industrializzazione.</p><p>Le diverse applicazioni del sistema e l'evoluzione verso la Community ampliano successivamente il perimetro del progetto, mantenendo una base architetturale condivisa.</p><p>Il risultato a cui il progetto tende non è quindi semplicemente un nuovo dispositivo, ma un prodotto integrato nel quale tecnologia e rete di supporto concorrono alla gestione della sicurezza personale.</p><p>La traiettoria può essere sintetizzata in:</p><p class="flow-label">BASE SOFTWARE → INTEGRAZIONE HARDWARE → PROTOTIPAZIONE → VALIDAZIONE → INDUSTRIALIZZAZIONE → EVOLUZIONE</p><p>Questa è la fotografia corretta del progetto: una base tecnologica concreta già sviluppata, un'architettura di prodotto definita e un percorso ancora da completare attraverso integrazione, prototipazione, validazione e industrializzazione.</p></section></div></div>
+                <details class="toc-disclosure">
+                    <summary>In questa pagina</summary>
+                    <ul>
+                        <li><a href="#s1">1. Introduzione</a></li>
+                        <li><a href="#s2">2. Il problema progettuale</a></li>
+                        <li><a href="#s3">3. La struttura complessiva del sistema</a></li>
+                        <li><a href="#s4">4. La base software e l'architettura digitale</a></li>
+                        <li><a href="#s5">5. Il dispositivo standalone</a></li>
+                        <li><a href="#s6">6. L'integrazione hardware/software</a></li>
+                        <li><a href="#s7">7. La gestione degli eventi</a></li>
+                        <li><a href="#s8">8. La rete di supporto all'interno dell'architettura</a></li>
+                        <li><a href="#s9">9. Una piattaforma comune per più contesti</a></li>
+                        <li><a href="#s10">10. Stato attuale del progetto</a></li>
+                        <li><a href="#s11">11. Dalla progettazione alla validazione</a></li>
+                        <li><a href="#s12">12. Gli aspetti da validare</a></li>
+                        <li><a href="#s13">13. Privacy e sicurezza dell'architettura</a></li>
+                        <li><a href="#s14">14. Il percorso di prodotto</a></li>
+                        <li><a href="#s15">15. Il valore dell'architettura Sefty</a></li>
+                        <li><a href="#s16">16. La logica complessiva del progetto</a></li>
+                        <li><a href="#s17">17. Progetto, sviluppo e risultato: una distinzione fondamentale</a></li>
+                        <li><a href="#s18">18. Conclusione</a></li>
+                    </ul>
+                </details>
+            </nav>
+            <div class="prose">
+                <section id="s1">
+                    <h2>1. Introduzione</h2>
+                    <p>Sefty è un progetto tecnologico dedicato alla sicurezza personale, sviluppato con l'obiettivo di
+                        integrare interazione fisica, applicazione, infrastruttura digitale e rete di supporto
+                        all'interno di un unico sistema.</p>
+                    <p>Il progetto nasce dall'esigenza di rendere più semplice l'attivazione di una richiesta di
+                        supporto e di organizzare in modo strutturato ciò che avviene successivamente: gestione
+                        dell'evento, comunicazione delle informazioni necessarie e coinvolgimento della rete prevista
+                        dal sistema.</p>
+                    <p>Sefty non viene quindi concepito come un singolo prodotto hardware né come una semplice
+                        applicazione mobile.</p>
+                    <p>La sua caratteristica principale è l'integrazione di più livelli tecnologici e relazionali,
+                        progettati per evolvere progressivamente da una base software già sviluppata verso un sistema
+                        hardware/software integrato, sperimentato in condizioni reali e successivamente
+                        industrializzabile.</p>
+                    <p>Il progetto deve pertanto essere letto come un percorso nel quale architettura, prodotto,
+                        validazione e sviluppo del modello di utilizzo procedono in modo progressivo e interdipendente.
+                    </p>
+                </section>
+                <section id="s2">
+                    <h2>2. Il problema progettuale</h2>
+                    <p>Una situazione di difficoltà può richiedere una risposta rapida proprio quando l'interazione con
+                        uno smartphone può risultare poco agevole.</p>
+                    <p>Utilizzare il telefono può infatti richiedere di estrarlo, sbloccarlo, individuare l'applicazione
+                        e compiere una serie di azioni. In una situazione di stress o di pericolo, questa sequenza può
+                        rappresentare un ostacolo.</p>
+                    <p>Il problema affrontato da Sefty è quindi innanzitutto rendere più accessibile il punto di
+                        attivazione della richiesta di supporto.</p>
+                    <p>A questo problema se ne aggiunge uno di natura sistemica.</p>
+                    <p>L'attivazione di un evento costituisce soltanto l'inizio del processo. Perché il sistema abbia
+                        una reale utilità, la richiesta deve poter essere gestita attraverso un'infrastruttura capace di
+                        organizzare informazioni, comunicazioni e destinatari.</p>
+                    <p>Il progetto affronta quindi due esigenze collegate:</p>
+                    <p>semplificare l'interazione nel momento dell'attivazione</p>
+                    <p>e</p>
+                    <p>strutturare ciò che avviene dopo l'attivazione.</p>
+                    <p>Questa seconda componente è ciò che porta Sefty oltre il concetto di semplice dispositivo di
+                        allarme.</p>
+                </section>
+                <section id="s3">
+                    <h2>3. La struttura complessiva del sistema</h2>
+                    <p>L'architettura di Sefty può essere ricondotta a quattro livelli principali:</p>
+                    <h3>3.1 Interfaccia fisica</h3>
+                    <p>Il dispositivo wearable rappresenta il punto di interazione diretta con la persona.</p>
+                    <h3>3.2 Livello applicativo</h3>
+                    <p>L'applicazione permette di configurare e utilizzare le diverse funzioni del sistema.</p>
+                    <h3>3.3 Infrastruttura digitale</h3>
+                    <p>I servizi software gestiscono utenti, eventi, comunicazioni e informazioni necessarie al
+                        funzionamento dell'ecosistema.</p>
+                    <h3>3.4 Rete di supporto</h3>
+                    <p>Il sistema mette in relazione la persona con la propria rete di fiducia e, secondo l'evoluzione
+                        prevista, con una dimensione comunitaria.</p>
+                    <p>La relazione tra questi livelli può essere sintetizzata:</p>
+                    <p class="flow-label">PERSONA → DISPOSITIVO → APPLICAZIONE → INFRASTRUTTURA → RETE DI SUPPORTO</p>
+                    <p>La forza progettuale di Sefty risiede nella possibilità di far funzionare questi livelli come
+                        parti di una stessa architettura.</p>
+                </section>
+                <section id="s4">
+                    <h2>4. La base software e l'architettura digitale</h2>
+                    <p>La componente software costituisce la base sulla quale viene costruito il progetto.</p>
+                    <p>L'applicazione rappresenta il livello attraverso il quale l'utente interagisce con il sistema e
+                        vengono organizzate le principali funzioni digitali.</p>
+                    <p>A questa si affianca l'infrastruttura necessaria alla gestione dei dati, degli utenti, degli
+                        eventi e delle comunicazioni.</p>
+                    <p>Questa impostazione permette di sviluppare e verificare progressivamente la logica del sistema
+                        anche prima della completa disponibilità del dispositivo hardware definitivo.</p>
+                    <p>La base software rappresenta quindi un punto concreto di partenza del progetto, mentre
+                        l'integrazione con l'hardware standalone costituisce una successiva fase di sviluppo.</p>
+                    <p>Questa distinzione è importante per rappresentare correttamente lo stato attuale: l'esistenza
+                        della componente software non equivale alla disponibilità di un prodotto hardware già
+                        industrializzato.</p>
+                </section>
+                <section id="s5">
+                    <h2>5. Il dispositivo standalone</h2>
+                    <p>Il wearable rappresenta l'evoluzione hardware centrale del progetto.</p>
+                    <p>La sua funzione è rendere fisicamente accessibile il sistema di sicurezza attraverso
+                        un'interfaccia dedicata e indipendente dall'interazione diretta con lo smartphone nel momento
+                        dell'attivazione.</p>
+                    <p>Il dispositivo è stato definito a livello funzionale e architetturale, mentre la trasformazione
+                        in un prodotto completo richiede ancora attività di:</p>
+                    <ul class="rules">
+                        <li>progettazione elettronica;</li>
+                        <li>integrazione dei componenti;</li>
+                        <li>sviluppo e integrazione firmware;</li>
+                        <li>progettazione meccanica;</li>
+                        <li>miniaturizzazione;</li>
+                        <li>prototipazione;</li>
+                        <li>test;</li>
+                        <li>validazione;</li>
+                        <li>industrializzazione.</li>
+                    </ul>
+                    <p>Di conseguenza, il wearable deve essere considerato una componente progettata e in fase di
+                        sviluppo, non un prodotto industrializzato già disponibile.</p>
+                    <p>Questo passaggio rappresenta una delle principali attività tecnologiche della fase successiva del
+                        progetto.</p>
+                </section>
+                <section id="s6">
+                    <h2>6. L'integrazione hardware/software</h2>
+                    <p>Il valore del dispositivo non risiede nella sua autonomia considerata isolatamente, ma nella sua
+                        integrazione con l'infrastruttura digitale.</p>
+                    <p>Il sistema deve permettere una relazione coerente tra:</p>
+                    <p class="flow-label">DISPOSITIVO</p>
+                    <p>interazione fisica;</p>
+                    <p class="flow-label">CONNETTIVITÀ</p>
+                    <p>trasmissione delle informazioni;</p>
+                    <p class="flow-label">INFRASTRUTTURA</p>
+                    <p>gestione dell'evento;</p>
+                    <p class="flow-label">APP</p>
+                    <p>interazione e configurazione;</p>
+                    <p class="flow-label">RETE</p>
+                    <p>ricezione e gestione delle informazioni previste.</p>
+                    <p>L'obiettivo della fase di integrazione è quindi trasformare componenti sviluppate separatamente
+                        in un unico sistema hardware/software funzionante e verificabile.</p>
+                    <p>È proprio questa fase a determinare il passaggio da un'architettura progettata a un prodotto
+                        concretamente testabile nelle condizioni d'uso previste.</p>
+                </section>
+                <section id="s7">
+                    <h2>7. La gestione degli eventi</h2>
+                    <p>Il sistema Sefty è progettato attorno alla gestione strutturata degli eventi di sicurezza.</p>
+                    <p>In termini generali, il processo comprende:</p>
+                    <p class="flow-label">attivazione → conferma → apertura dell'evento → comunicazione → gestione →
+                        chiusura</p>
+                    <p>L'architettura prevede meccanismi destinati a ridurre il rischio di attivazioni involontarie e a
+                        garantire che le informazioni vengano gestite secondo le modalità previste.</p>
+                    <p>L'obiettivo non è soltanto generare una segnalazione, ma creare un evento strutturato, al quale
+                        possono essere associate informazioni e azioni coerenti con lo stato del sistema.</p>
+                    <p>La qualità di questo processo dovrà essere verificata attraverso test tecnici e successivamente
+                        attraverso l'utilizzo in condizioni reali.</p>
+                </section>
+                <section id="s8">
+                    <h2>8. La rete di supporto all'interno dell'architettura</h2>
+                    <p>La componente umana rappresenta un livello essenziale del sistema.</p>
+                    <p>Sefty collega infatti la gestione digitale dell'evento a una rete di supporto, il cui primo
+                        livello è costituito dalle persone individuate dall'utente.</p>
+                    <p>La Community, approfondita nel relativo capitolo, rappresenta una possibile estensione del
+                        modello verso una dimensione più ampia.</p>
+                    <p>Nel progetto complessivo questa componente ha una funzione precisa: portare l'evento dalla
+                        dimensione puramente tecnologica alla dimensione della gestione e del supporto.</p>
+                    <p>Il sistema può quindi essere rappresentato come:</p>
+                    <p class="flow-label">evento → informazioni → rete → supporto</p>
+                    <p>La rete non sostituisce la tecnologia e la tecnologia non sostituisce la rete. Il progetto nasce
+                        proprio dalla loro integrazione.</p>
+                </section>
+                <section id="s9">
+                    <h2>9. Una piattaforma comune per più contesti</h2>
+                    <p>Un elemento importante dell'architettura è la possibilità di utilizzare una base tecnologica
+                        comune per contesti differenti.</p>
+                    <p>La stessa infrastruttura può supportare progressivamente:</p>
+                    <ul class="rules">
+                        <li>sicurezza personale;</li>
+                        <li>gestione della rete di fiducia;</li>
+                        <li>supervisione di gruppi;</li>
+                        <li>utilizzo in contesti organizzati;</li>
+                        <li>Community territoriale.</li>
+                    </ul>
+                    <p>Questo consente di evitare la costruzione di sistemi completamente separati e di sviluppare
+                        invece un'architettura comune sulla quale possono essere costruite diverse modalità di utilizzo.
+                    </p>
+                    <p>La differenziazione tra i diversi contesti avviene quindi principalmente attraverso funzionalità,
+                        regole e configurazioni, mantenendo una base tecnologica condivisa.</p>
+                </section>
+                <section id="s10">
+                    <h2>10. Stato attuale del progetto</h2>
+                    <p>Per rappresentare correttamente Sefty è fondamentale distinguere tra diversi livelli di maturità.
+                    </p>
+                    <p>Componenti già sviluppate</p>
+                    <p>La componente software costituisce la base concreta attuale del progetto e permette di sviluppare
+                        e verificare le principali logiche dell'ecosistema.</p>
+                    <p>Componenti progettate</p>
+                    <p>L'architettura del dispositivo standalone e l'integrazione hardware/software sono state definite
+                        come direzione di sviluppo, con requisiti e componenti da trasformare progressivamente in
+                        prototipi funzionanti.</p>
+                    <p>Componenti da sviluppare e validare</p>
+                    <p>La realizzazione fisica del wearable, la sua integrazione completa, i test tecnici, la
+                        sperimentazione sul campo e la successiva industrializzazione costituiscono attività ancora
+                        necessarie.</p>
+                    <p>Evoluzioni successive</p>
+                    <p>L'estensione della rete territoriale e l'eventuale utilizzo di informazioni aggregate
+                        rappresentano livelli evolutivi che dovranno essere sperimentati e verificati.</p>
+                    <p>Questa distinzione permette di evitare una sovrapposizione tra progetto, sviluppo e risultato già
+                        dimostrato.</p>
+                </section>
+                <section id="s11">
+                    <h2>11. Dalla progettazione alla validazione</h2>
+                    <p>Il progetto Sefty deve essere sviluppato attraverso una progressione nella quale ogni fase
+                        consenta di verificare quella precedente.</p>
+                    <p>Il percorso può essere sintetizzato in:</p>
+                    <p class="flow-label">PROGETTAZIONE</p>
+                    <p class="flow-label">definizione dell'architettura e dei requisiti;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">SVILUPPO</p>
+                    <p class="flow-label">realizzazione delle componenti software e hardware;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">INTEGRAZIONE</p>
+                    <p class="flow-label">connessione tra dispositivo, applicazione e infrastruttura;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">TEST TECNICI</p>
+                    <p class="flow-label">verifica del funzionamento delle componenti;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">SPERIMENTAZIONE</p>
+                    <p class="flow-label">utilizzo in contesti reali e raccolta dei risultati;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">VALIDAZIONE</p>
+                    <p class="flow-label">verifica dell'effettiva utilità e affidabilità del sistema;</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">INDUSTRIALIZZAZIONE</p>
+                    <p>ottimizzazione del prodotto, dei processi e dei costi.</p>
+                    <p>Questo percorso è fondamentale perché una funzionalità progettata non equivale automaticamente a
+                        una funzionalità validata.</p>
+                </section>
+                <section id="s12">
+                    <h2>12. Gli aspetti da validare</h2>
+                    <p>La validazione del progetto non riguarda soltanto il corretto funzionamento elettronico o
+                        software.</p>
+                    <p>Deve verificare l'interazione dell'intero sistema.</p>
+                    <p>Tra gli aspetti principali rientrano:</p>
+                    <ul class="rules">
+                        <li>affidabilità della connettività;</li>
+                        <li>corretto funzionamento degli eventi;</li>
+                        <li>affidabilità delle notifiche;</li>
+                        <li>gestione delle attivazioni involontarie;</li>
+                        <li>autonomia e comportamento del dispositivo;</li>
+                        <li>esperienza dell'utente;</li>
+                        <li>percezione della sicurezza;</li>
+                        <li>comportamento della rete di supporto;</li>
+                        <li>adeguatezza delle modalità di utilizzo;</li>
+                        <li>sostenibilità del prodotto.</li>
+                    </ul>
+                    <p>Questa impostazione permette di considerare Sefty come un sistema socio-tecnico, nel quale la
+                        validazione deve comprendere tecnologia, comportamento dell'utente e condizioni reali di
+                        utilizzo.</p>
+                </section>
+                <section id="s13">
+                    <h2>13. Privacy e sicurezza dell'architettura</h2>
+                    <p>La gestione della sicurezza personale comporta il trattamento di informazioni che devono essere
+                        protette in modo coerente con la funzione del sistema.</p>
+                    <p>Per questo privacy e sicurezza dei dati devono essere integrate nell'architettura fin dalle fasi
+                        di progettazione.</p>
+                    <p>I principali aspetti da considerare comprendono:</p>
+                    <ul class="rules">
+                        <li>minimizzazione dei dati;</li>
+                        <li>gestione degli accessi;</li>
+                        <li>autorizzazioni;</li>
+                        <li>protezione delle comunicazioni;</li>
+                        <li>sicurezza dell'infrastruttura;</li>
+                        <li>gestione delle informazioni relative alla posizione;</li>
+                        <li>distinzione tra informazioni personali e dati aggregati.</li>
+                    </ul>
+                    <p>L'obiettivo è costruire un sistema nel quale l'informazione necessaria alla sicurezza sia
+                        disponibile a chi ne ha effettivamente bisogno, evitando accessi non necessari.</p>
+                    <p>Questo principio deve accompagnare sia l'evoluzione software sia quella hardware.</p>
+                </section>
+                <section id="s14">
+                    <h2>14. Il percorso di prodotto</h2>
+                    <p>Il passaggio da progetto tecnologico a prodotto richiede una serie di trasformazioni successive.
+                    </p>
+                    <p>Il percorso previsto può essere sintetizzato in:</p>
+                    <p class="flow-label">ARCHITETTURA</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">PROTOTIPO</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">INTEGRAZIONE</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">TEST</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">PILOTA</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">INDUSTRIALIZZAZIONE</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">MERCATO</p>
+                    <p>Ogni fase introduce requisiti differenti.</p>
+                    <p>Un prototipo deve dimostrare il funzionamento.</p>
+                    <p>Un pilota deve permettere di verificare il comportamento del sistema in condizioni reali.</p>
+                    <p>Un prodotto industriale deve aggiungere affidabilità, ripetibilità, sostenibilità dei costi,
+                        conformità e capacità produttiva.</p>
+                    <p>Per questo il progetto non considera la realizzazione del primo prototipo come il punto di
+                        arrivo, ma come un passaggio necessario verso la costruzione di un prodotto completo.</p>
+                </section>
+                <section id="s15">
+                    <h2>15. Il valore dell'architettura Sefty</h2>
+                    <p>Il valore del progetto risiede nella possibilità di integrare in un unico sistema elementi che,
+                        separatamente, risolverebbero soltanto parti del problema.</p>
+                    <p>Il dispositivo rende accessibile l'interazione.</p>
+                    <p>L'applicazione organizza l'esperienza digitale.</p>
+                    <p>L'infrastruttura gestisce eventi e comunicazioni.</p>
+                    <p>La rete di supporto introduce la componente umana.</p>
+                    <p>Le diverse modalità di utilizzo estendono l'architettura a contesti differenti.</p>
+                    <p>La Community rappresenta una possibile evoluzione della rete.</p>
+                    <p>La dimensione territoriale costituisce una prospettiva successiva.</p>
+                    <p>Il progetto consiste quindi nella costruzione e nell'integrazione progressiva di questi livelli,
+                        mantenendo una base tecnologica comune.</p>
+                </section>
+                <section id="s16">
+                    <h2>16. La logica complessiva del progetto</h2>
+                    <p>L'intero sistema può essere sintetizzato attraverso questa architettura:</p>
+                    <p class="flow-label">PERSONA</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">DISPOSITIVO</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">APPLICAZIONE</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">INFRASTRUTTURA DIGITALE</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">EVENTO</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">RETE DI SUPPORTO</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">CONTESTO</p>
+                    <p class="flow-arrow">↓</p>
+                    <p class="flow-label">EVOLUZIONE DEL SISTEMA</p>
+                    <p>La sequenza evidenzia il principio centrale del progetto: ogni componente deve svolgere una
+                        funzione specifica e contribuire al funzionamento complessivo.</p>
+                    <p>Sefty non nasce quindi dalla somma di prodotti indipendenti, ma dalla progettazione di un sistema
+                        nel quale hardware, software, comunicazione e rete siano progettati per interagire.</p>
+                </section>
+                <section id="s17">
+                    <h2>17. Progetto, sviluppo e risultato: una distinzione fondamentale</h2>
+                    <p>Per mantenere una rappresentazione corretta dello stato di Sefty è necessario distinguere tre
+                        livelli.</p>
+                    <p>Ciò che costituisce la base attuale</p>
+                    <p>La componente software e l'architettura digitale rappresentano il punto concreto dal quale il
+                        progetto prosegue.</p>
+                    <p>Ciò che è stato progettato</p>
+                    <p>L'architettura hardware, l'integrazione del wearable e le successive evoluzioni del sistema
+                        definiscono il percorso tecnologico.</p>
+                    <p>Ciò che deve ancora essere dimostrato</p>
+                    <p>Affidabilità complessiva, comportamento del dispositivo in condizioni reali, validazione
+                        dell'esperienza, industrializzazione e risposta del mercato devono essere oggetto di successive
+                        verifiche.</p>
+                    <p>Questa distinzione non riduce l'ambizione del progetto.</p>
+                    <p>Al contrario, permette di presentare Sefty in modo realistico, verificabile e coerente con il
+                        percorso necessario per trasformare una progettazione tecnologica in un prodotto.</p>
+                </section>
+                <section id="s18">
+                    <h2>18. Conclusione</h2>
+                    <p>Il progetto alla base di Sefty consiste nella costruzione progressiva di un sistema integrato di
+                        sicurezza personale, nel quale una componente fisica, una piattaforma digitale,
+                        un'infrastruttura software e una rete di supporto operano secondo una logica comune.</p>
+                    <p>Il punto di partenza concreto è rappresentato dalla base software e dall'architettura del
+                        sistema.</p>
+                    <p>Il passaggio successivo consiste nell'integrare e validare il dispositivo standalone, verificare
+                        il funzionamento dell'intero sistema in condizioni reali e affrontare progressivamente le
+                        attività necessarie alla sua industrializzazione.</p>
+                    <p>Le diverse applicazioni del sistema e l'evoluzione verso la Community ampliano successivamente il
+                        perimetro del progetto, mantenendo una base architetturale condivisa.</p>
+                    <p>Il risultato a cui il progetto tende non è quindi semplicemente un nuovo dispositivo, ma un
+                        prodotto integrato nel quale tecnologia e rete di supporto concorrono alla gestione della
+                        sicurezza personale.</p>
+                    <p>La traiettoria può essere sintetizzata in:</p>
+                    <p class="flow-label">BASE SOFTWARE → INTEGRAZIONE HARDWARE → PROTOTIPAZIONE → VALIDAZIONE →
+                        INDUSTRIALIZZAZIONE → EVOLUZIONE</p>
+                    <p>Questa è la fotografia corretta del progetto: una base tecnologica concreta già sviluppata,
+                        un'architettura di prodotto definita e un percorso ancora da completare attraverso integrazione,
+                        prototipazione, validazione e industrializzazione.</p>
+                </section>
+            </div>
+        </div>
         <section class="related band-mist">
             <div class="wrap">
-                <ul class="related-grid"><li class="tile"><h3><a class="tile-link" href="impatto.html">Impatto</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li><li class="tile"><h3><a class="tile-link" href="notte.html">Notte</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li><li class="tile"><h3><a class="tile-link" href="giorno.html">Giorno</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li><li class="tile"><h3><a class="tile-link" href="funzionamento.html">Funzionamento</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li><li class="tile"><h3><a class="tile-link" href="community.html">Community</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li><li class="tile"><h3><a class="tile-link" href="visione.html">Visione</a></h3><span class="tile-arrow" aria-hidden="true">→</span></li></ul>
+                <ul class="related-grid">
+                    <li class="tile">
+                        <h3><a class="tile-link" href="impatto.html">Impatto</a></h3><span class="tile-arrow"
+                            aria-hidden="true">→</span>
+                    </li>
+                    <li class="tile">
+                        <h3><a class="tile-link" href="notte.html">Notte</a></h3><span class="tile-arrow"
+                            aria-hidden="true">→</span>
+                    </li>
+                    <li class="tile">
+                        <h3><a class="tile-link" href="giorno.html">Giorno</a></h3><span class="tile-arrow"
+                            aria-hidden="true">→</span>
+                    </li>
+                    <li class="tile">
+                        <h3><a class="tile-link" href="funzionamento.html">Funzionamento</a></h3><span
+                            class="tile-arrow" aria-hidden="true">→</span>
+                    </li>
+                    <li class="tile">
+                        <h3><a class="tile-link" href="community.html">Community</a></h3><span class="tile-arrow"
+                            aria-hidden="true">→</span>
+                    </li>
+                    <li class="tile">
+                        <h3><a class="tile-link" href="visione.html">Visione</a></h3><span class="tile-arrow"
+                            aria-hidden="true">→</span>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
-<footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><svg width="28" height="28" viewbox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#10222f"></rect><circle cx="14" cy="14" r="4.5" fill="#f29a00"></circle><circle cx="14" cy="14" r="9" fill="none" stroke="#f29a00" stroke-opacity=".45"></circle></svg>Sefty</a>
-                    <p class="footer-tagline">dove la connessione diventa protezione</p></div><nav aria-label="Esplora Sefty"><h2>Esplora Sefty</h2><ul class="footer-links"><li><a href="impatto.html">Impatto</a></li><li><a href="notte.html">Notte</a></li><li><a href="giorno.html">Giorno</a></li><li><a href="funzionamento.html">Funzionamento</a></li><li><a href="community.html">Community</a></li><li><a href="visione.html">Visione</a></li><li><a href="progetto.html">Progetto</a></li></ul></nav><section class="footer-social" aria-label="Profili social"><h2>Seguici</h2><div class="footer-social-links"><a class="footer-social-link" data-social="instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" role="img" aria-label="Instagram"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a class="footer-social-link" data-social="linkedin-1" aria-label="LinkedIn — profilo 1" title="LinkedIn — profilo 1"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" role="img" aria-label="LinkedIn — profilo 1"><path fill="currentColor" stroke="none" d="M5.4 7.8H2.2V22h3.2V7.8ZM3.8 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 13.3c0-3.5-1.9-5.7-4.8-5.7-2.2 0-3.2 1.2-3.8 2V7.8h-3.2V22h3.2v-7.9c0-2.1.9-3.3 2.6-3.3 1.6 0 2.7 1.1 2.7 3.3V22H22v-8.7Z"/></svg></a><a class="footer-social-link" data-social="linkedin-2" aria-label="LinkedIn — profilo 2" title="LinkedIn — profilo 2"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" role="img" aria-label="LinkedIn — profilo 2"><path fill="currentColor" stroke="none" d="M5.4 7.8H2.2V22h3.2V7.8ZM3.8 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 13.3c0-3.5-1.9-5.7-4.8-5.7-2.2 0-3.2 1.2-3.8 2V7.8h-3.2V22h3.2v-7.9c0-2.1.9-3.3 2.6-3.3 1.6 0 2.7 1.1 2.7 3.3V22H22v-8.7Z"/></svg></a></div></section></div><p class="legal">Sefty</p></div></footer>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div><a class="brand" href="index.html">Sefty</a>
+                    <p class="footer-tagline">dove la connessione diventa protezione</p>
+                </div>
+                <nav class="footer-nav-wide" aria-label="Esplora Sefty">
+                    <h2>Esplora Sefty</h2>
+                    <ul class="footer-links">
+                        <li><a href="impatto.html">Impatto</a></li>
+                        <li><a href="notte.html">Notte</a></li>
+                        <li><a href="giorno.html">Giorno</a></li>
+                        <li><a href="funzionamento.html">Funzionamento</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="visione.html">Visione</a></li>
+                        <li><a href="progetto.html">Progetto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="legal">Sefty</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
