@@ -97,10 +97,6 @@
             margin-bottom: .65rem
         }
 
-        #istruzioni-complete {
-            min-height: 12rem
-        }
-
         @media(max-width:600px) {
 
             .demo-table th,
@@ -116,18 +112,6 @@
         .demo-layout {
             padding-top: 2rem;
             padding-bottom: 4rem
-        }
-
-        .demo-layout .tabs-bar {
-            margin-bottom: 2rem
-        }
-
-        .demo-layout .tablist {
-            flex-wrap: wrap
-        }
-
-        .demo-layout [role="tabpanel"][hidden] {
-            display: none
         }
     </style>
 </head>
@@ -205,135 +189,77 @@
         </div>
         <div class="wrap demo-layout">
             <div class="prose demo-content">
-                <div class="tabs-bar">
-                    <div class="tablist" role="tablist" aria-label="Istruzioni della demo">
-                        <button class="tab" type="button" role="tab" id="tab-riassuntive" data-key="riassuntive"
-                            aria-controls="istruzioni-riassuntive" aria-selected="true">Istruzioni riassuntive</button>
-                        <button class="tab" type="button" role="tab" id="tab-complete" data-key="complete"
-                            aria-controls="istruzioni-complete" aria-selected="false" tabindex="-1">Istruzioni
-                            complete</button>
-                    </div>
-                </div>
-                <section id="istruzioni-riassuntive" class="tabpanel" role="tabpanel" aria-labelledby="tab-riassuntive"
-                    tabindex="0">
-                    <h2>Istruzioni riassuntive</h2>
-                    <p class="callout"><strong>Per preparare e avviare la demo seguire <a
-                                href="GUIDAFACILE.md">GUIDAFACILE.md</a>.</strong></p>
-                    <p>La procedura usa un computer Windows o Mac con Docker e Node.js e telefoni iPhone/Android con
-                        Expo Go. I telefoni possono usare reti diverse. Il computer deve rimanere acceso e connesso.</p>
-                    <h3>Prima configurazione</h3>
-                    <ol>
-                        <li>Installare Node.js 24 LTS, Docker Desktop ed Expo Go compatibile con SDK 57.</li>
-                        <li>Creare un <a href="https://expo.dev/signup">account Expo dedicato a Sefty</a>.</li>
-                        <li>Aprire un terminale nella cartella DemoSefty ed eseguire <code>npm run demo:login</code>.
-                        </li>
-                        <li>Accedere allo stesso account Expo in Expo Go su tutti i telefoni.</li>
-                    </ol>
-                    <p>Gli account usati <strong>dentro Sefty</strong> devono essere diversi per provare contatti, SOS e
-                        gruppi. Sono indipendenti dall'account Expo.</p>
-                    <h3>Comandi</h3>
-                    <p>Da DemoSefty, con Docker avviato:</p>
-                    <pre><code>npm run demo</code></pre>
-                    <p>Scansionare il QR corrente con i telefoni e mantenere Sefty in primo piano.</p>
-                    <div class="demo-table" role="region" aria-label="Comandi della demo" tabindex="0">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Comando</th>
-                                    <th scope="col">Funzione</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>npm run demo:login</code></td>
-                                    <td>Installare le dipendenze mancanti e accedere all'account Expo</td>
-                                </tr>
-                                <tr>
-                                    <td><code>npm run demo:account</code></td>
-                                    <td>Mostrare l'account Expo del computer</td>
-                                </tr>
-                                <tr>
-                                    <td><code>npm run demo</code></td>
-                                    <td>Controllare l'account, avviare servizi e tunnel, generare il QR</td>
-                                </tr>
-                                <tr>
-                                    <td><code>npm run demo:check</code></td>
-                                    <td>Controllare backend e tunnel mentre la demo è attiva</td>
-                                </tr>
-                                <tr>
-                                    <td><code>npm run demo:stop</code></td>
-                                    <td>Fermare i servizi Docker conservando il database</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p>Per terminare, premere Ctrl+C nel terminale della demo e poi eseguire
-                        <code>npm run demo:stop</code>. Su Windows, se PowerShell blocca npm.ps1, usare
-                        <code>npm.cmd</code> al posto di <code>npm</code>.</p>
-                    <h3>Dati e limiti</h3>
-                    <p>Il database persiste sul computer che esegue Docker. Copiare il progetto su un'altra macchina non
-                        trasferisce gli account Sefty. Non eliminare il volume del database e non sovrascrivere il file
-                        <code>.env</code> di un'installazione esistente.</p>
-                    <p>La demo usa GPS e comunicazioni in primo piano. Push remote ad app chiusa, GPS in background e
-                        hardware Bluetooth non sono inclusi nel collaudo. Il timer di rientro è eseguito sul telefono.
-                        Il recupero password non invia email reali. La guida contiene la sequenza da provare prima della
-                        presentazione.</p>
-                    <h3>Contenuto della cartella</h3>
-                    <div class="demo-table" role="region" aria-label="Contenuto della cartella" tabindex="0">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Percorso</th>
-                                    <th scope="col">Contenuto</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="GUIDAFACILE.md">GUIDAFACILE.md</a></td>
-                                    <td>Account Expo, primo avvio, prova generale e problemi comuni</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="REVISIONE_I3P.md">REVISIONE_I3P.md</a></td>
-                                    <td>Stato delle verifiche e limiti del collaudo</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="sefty-backend/README.md">sefty-backend/README.md</a></td>
-                                    <td>Manutenzione tecnica, test e tunnel alternativi</td>
-                                </tr>
-                                <tr>
-                                    <td>sefty-mobile</td>
-                                    <td>App React Native / Expo SDK 57</td>
-                                </tr>
-                                <tr>
-                                    <td>sefty-backend</td>
-                                    <td>API, database, servizi Docker e dashboard web</td>
-                                </tr>
-                                <tr>
-                                    <td>scripts</td>
-                                    <td>Avvio della demo e test del launcher</td>
-                                </tr>
-                                <tr>
-                                    <td>exports, presentazione_commercialista, fonts</td>
-                                    <td>Presentazioni e materiali grafici</td>
-                                </tr>
-                                <tr>
-                                    <td>TESTI_SITO_WEB_UFFICIALI.md</td>
-                                    <td>Testi del progetto per sito e comunicazione</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p>I profili in sefty-mobile/eas.json sono predisposizioni per build future e non si usano nella
-                        procedura Expo Go. Le credenziali Expo vanno inserite nel login, mai nei file del progetto.</p>
-                    <h3>Licenza</h3>
-                    <p>Software proprietario. Copyright (c) 2026 Fabrizio Fernando D'Amico. Tutti i diritti riservati.
-                        Vedere <a href="LICENSE">LICENSE</a>. Il progetto è un prototipo per sviluppo e valutazione;
-                        restano applicabili le condizioni della licenza.</p>
-                </section>
-                <section id="istruzioni-complete" class="tabpanel" role="tabpanel" aria-labelledby="tab-complete"
-                    tabindex="0" hidden>
-                    <h2>Istruzioni complete</h2>
-                </section>
+                <section id="istruzioni-riassuntive">
+<h2>Istruzioni riassuntive</h2>
+<h3>Sefty — Guida alla demo con Expo Go</h3>
+<p>La demo funziona con un computer Windows o Mac e telefoni iPhone/Android, anche su Wi-Fi diversi o rete mobile. Il computer deve restare acceso e connesso a Internet.</p>
+<h3>1. Preparare computer e telefoni</h3>
+<p><strong>Aggiornamento Android del 22 settembre 2026:</strong> corretto il blocco di avvio relativo alle notifiche push in Expo Go. Per aggiornare una cartella già utilizzata, fermare la demo con Ctrl+C e copiare i file della nuova consegna nella cartella esistente, conservando <code>sefty-backend/.env</code> e il database Docker. Riavviare con <code>npm run demo</code> e scansionare il QR corrente.</p>
+<p>Se si estrae la ZIP in una cartella nuova sullo stesso computer, l&#x27;avvio recupera automaticamente la configurazione dalla precedente installazione Docker, anche dopo un normale spegnimento dei servizi. Conservare la cartella precedente fino alla verifica della nuova. Se i container precedenti sono stati eliminati o erano già in errore, può essere necessario copiarne il file <code>sefty-backend/.env</code>: il programma lo segnala senza generare password incompatibili. Non cancellare il volume del database.</p>
+<p><strong>Mappa Android:</strong> su un telefono l&#x27;app si apre ma non carica strade e nomi, pur mostrando segnalazioni e zone. Questo problema non è risolto dalla correzione delle notifiche. Prima della presentazione verificare la cartografia sui telefoni scelti; i dettagli del controllo sono in <a href="REVISIONE_I3P.md">REVISIONE_I3P.md</a>.</p>
+<p>Sul computer installare:</p>
+<ul><li><a href="https://nodejs.org/">Node.js</a>: versione 24 LTS, oppure 22.13 o successiva della serie 22.</li><li><a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>: versione adatta a Windows o Mac. Su Windows usare i container Linux e completare l&#x27;eventuale configurazione WSL2 richiesta da Docker.</li></ul>
+<p>Sui telefoni installare <strong>Expo Go compatibile</strong>. Prima della presentazione provare gli stessi dispositivi che verranno utilizzati.</p>
+<p>Estrarre la cartella <strong>DemoSefty</strong> in una posizione locale, ad esempio Documenti. Non avviare il progetto dentro un file ZIP. </p>
+<p>La ZIP contiene il progetto e le guide, senza password, account personali o database di prova. Su un nuovo computer il primo avvio genera la configurazione e un database vuoto: registrare gli utenti Sefty da usare nella presentazione. Gli avvii successivi conservano i dati inseriti.</p>
+<p><strong>Aprire Docker Desktop e attendere che il motore sia avviato.</strong></p>
+<h3>2. Creare l&#x27;account Expo dedicato a Sefty</h3>
+<p>Questa operazione va eseguita <strong>una sola volta</strong> per la demo.</p>
+<ol><li>Aprire <a href="https://expo.dev/signup">expo.dev/signup</a>.</li><li>Usare un indirizzo email gestito dal team Sefty e scegliere un nome riconoscibile, ad esempio <code>sefty-demo</code> se disponibile.</li><li>Impostare una password dedicata, completare la registrazione e l&#x27;eventuale verifica email.</li><li>Conservare le credenziali nel gestore password del team e renderle disponibili alle persone che preparano i telefoni. Non inserirle nei file del progetto.</li></ol>
+<p>L&#x27;account Expo serve ad aprire il progetto in Expo Go. Non servono un account Apple Developer o un piano di build a pagamento.</p>
+<p><strong>Usare lo stesso account Expo sul computer e in Expo Go su tutti i telefoni della demo.</strong> Questo requisito è obbligatorio su iPhone con Expo Go SDK 57 (<a href="https://expo.dev/changelog/expo-go-57-login">annuncio Expo</a>).</p>
+<p>Gli account <strong>Sefty</strong> sono separati da Expo: utilizzare due utenti Sefty diversi per provare contatti, SOS, Hug e gruppi.</p>
+<h3>3. Collegare il computer all&#x27;account Expo</h3>
+<p>Aprire un terminale nella cartella <strong>DemoSefty</strong>, quella che contiene questo documento e <code>package.json</code>.</p>
+<ul><li><strong>Windows:</strong> aprire la cartella in Esplora file e scegliere «Apri nel terminale» dal menu contestuale. In alternativa aprire PowerShell e usare <code>cd &quot;percorso della cartella DemoSefty&quot;</code>.</li><li><strong>Mac:</strong> aprire Terminale, digitare <code>cd </code> seguito da uno spazio, trascinare la cartella DemoSefty nella finestra e premere Invio.</li></ul>
+<p>Eseguire:</p>
+<pre><code>npm run demo:login</code></pre>
+<p>Il comando installa le dipendenze mancanti. Il primo avvio può richiedere alcuni minuti. Completare il login Expo seguendo le istruzioni del terminale, usando l&#x27;account dedicato alla demo. Se si apre il browser, verificare di selezionare quell&#x27;account.</p>
+<p>Per controllare l&#x27;account:</p>
+<pre><code>npm run demo:account</code></pre>
+<p>Il nome mostrato deve essere quello dell&#x27;account dedicato Sefty. Se compare un altro account, ripetere <code>npm run demo:login</code> con quello corretto.</p>
+<p><strong>Su Windows:</strong> se PowerShell blocca <code>npm.ps1</code>, sostituire <code>npm</code> con <code>npm.cmd</code> in tutti i comandi, ad esempio <code>npm.cmd run demo:login</code>. Non occorre modificare le impostazioni di sicurezza di PowerShell.</p>
+<h3>4. Collegare i telefoni allo stesso account</h3>
+<p>Su ogni telefono:</p>
+<ol><li>Aprire Expo Go e toccare l&#x27;avatar in alto a destra.</li><li>Se è presente un account personale diverso, effettuare il logout.</li><li>Accedere con l&#x27;account Expo dedicato a Sefty.</li><li>Verificare che il nome utente coincida con quello mostrato da <code>npm run demo:account</code> sul computer.</li></ol>
+<p>Le vecchie voci Sefty nella cronologia non impediscono il funzionamento. Utilizzare il QR generato dal nuovo avvio.</p>
+<h3>5. Avviare la demo</h3>
+<p>Con Docker Desktop aperto, dalla cartella DemoSefty eseguire:</p>
+<pre><code>npm run demo</code></pre>
+<p>Il comando controlla l&#x27;accesso Expo, avvia il database e gli altri servizi, apre il collegamento Internet del backend e genera il QR di Expo Go. Al primo avvio vengono scaricati anche i componenti Docker: attendere il completamento.</p>
+<p>Non occorre installare ngrok manualmente, creare un account Cloudflare o modificare indirizzi nei file.</p>
+<ul><li><strong>iPhone:</strong> scansionare il QR con Fotocamera e aprire il collegamento in Expo Go.</li><li><strong>Android:</strong> aprire Expo Go e utilizzare la funzione di scansione del QR.</li><li>Attendere il caricamento dell&#x27;app; la prima volta può servire più tempo.</li><li>Dentro Sefty, registrare o utilizzare un account diverso su ciascun telefono.</li><li>Consentire la posizione precisa durante l&#x27;uso dell&#x27;app e le eventuali notifiche locali richieste.</li></ul>
+<p>Mantenere le app <strong>aperte in primo piano</strong>, il terminale aperto e il computer collegato all&#x27;alimentazione. Disattivare la sospensione e non chiudere il coperchio del portatile. Non avviare più copie della demo contemporaneamente sullo stesso computer.</p>
+<p>Il QR può cambiare dopo un riavvio: usare sempre quello corrente. L&#x27;indirizzo «Backend HTTPS» stampato nel terminale è configurato automaticamente e non va scansionato al posto del QR.</p>
+<h3>6. Preparare la presentazione</h3>
+<p>La barra inferiore contiene cinque comandi:</p>
+<ul><li><strong>mappa:</strong> torna alla posizione attuale e chiude le informazioni della zona.</li><li><strong>giorno</strong>, con il simbolo del sole: apre gruppi e sessioni condivise.</li><li><strong>SOS:</strong> invia la richiesta di allarme.</li><li><strong>contatti</strong>, con il simbolo del gruppo: apre contatti fidati e richieste in attesa.</li><li><strong>rientro</strong>, con il simbolo del timer: apre il timer di rientro.</li></ul>
+<p>Toccare una circoscrizione sulla mappa per mostrarne le informazioni. Il menu in alto a sinistra contiene le impostazioni e si chiude toccando la mappa, scorrendo verso sinistra o premendo la X.</p>
+<p>Eseguire una prova completa prima della presentazione, con un telefono sulla rete mobile e l&#x27;altro sul Wi-Fi:</p>
+<ol><li>Aprire Sefty su entrambi e accedere con due utenti distinti.</li><li>Aggiungere il secondo utente ai contatti fidati e accettare la richiesta dall&#x27;altro telefono.</li><li>Inviare un Haptic Hug e controllarne la ricezione.</li><li>Inviare un SOS, premere «Intervengo» sull&#x27;altro telefono e verificare la conferma. Chiudere il SOS e controllare che scompaia da entrambi. Non attivare la chiamata al 112 durante la prova.</li><li>Inviare una segnalazione sulla mappa e verificarla sull&#x27;altro telefono.</li><li>Creare un gruppo Sefty Giorno, far entrare il secondo utente tramite invito, avviare e terminare la sessione. Provare il GPS all&#x27;aperto; al chiuso non basare la presentazione su distanze di pochi metri.</li><li>Impostare il timer a un minuto e attendere anche i 30 secondi di verifica. Sui due telefoni compare «Rientro non confermato» nella mappa di Sefty. Sul telefono del contatto premere «Intervengo»: il nome compare nella scheda su entrambi. Sul telefono che ha avviato il timer premere «Sto bene · avvisa i contatti» e verificare la chiusura su entrambi. Ripetere confermando «Sono arrivato» prima che scadano i 30 secondi: non deve partire alcuna allerta.</li><li>Cambiare rete a un telefono, tornare nell&#x27;app e inviare un altro Hug per verificare la riconnessione.</li></ol>
+<p>Preparare gli account Sefty sullo stesso computer che ospiterà la presentazione: i dati restano nel suo database.</p>
+<h4>Allerta di rientro</h4>
+<p>L’allerta rimane dentro Sefty e riguarda soltanto la persona che ha avviato il timer e i suoi contatti fidati al momento dell’invio. Non viene inviata agli utenti nelle vicinanze. La scheda indica l’ultima posizione disponibile e quanto tempo è passato dalla rilevazione; se il GPS manca, lo segnala senza mostrare una posizione fittizia.</p>
+<p>«Intervengo» registra la presa in carico e mostra il nome del contatto. La persona interessata può chiudere l’allerta con «Sto bene · avvisa i contatti»; un contatto intervenuto può usare «Conferma che sta bene» dopo averlo verificato. «Mostra mappa» nasconde la scheda, senza chiudere l’allerta: per riaprirla, toccare la voce sotto la barra superiore.</p>
+<p>Le allerte già registrate e ancora aperte si recuperano alla riconnessione, anche se il contatto era offline all’invio. Un tentativo ripetuto dopo un errore di rete usa la stessa allerta. Se non ci sono contatti fidati, viene indicato chiaramente: nessuno è stato avvisato.</p>
+<h4>Funzioni e limiti</h4>
+<ul><li>SOS, Hug e aggiornamenti in tempo reale richiedono le app aperte e connesse. Gli eventi inviati a un telefono offline non hanno consegna garantita.</li><li>Il timer funziona sul telefono: se l&#x27;app viene sospesa, l&#x27;invio può essere ritardato fino alla riapertura.</li><li>Le notifiche push remote ad app chiusa e il GPS in background non fanno parte di questa demo.</li><li>Il bracciale e i Tag Bluetooth reali non sono collaudati; l&#x27;associazione di un codice nell&#x27;app non equivale a una scansione Bluetooth.</li><li>Il recupero password non invia email reali. Preparare e conservare le credenziali degli utenti Sefty prima della presentazione.</li><li>I tunnel richiedono Internet e possono subire interruzioni. In caso di errore, riavviare e ripetere la prova.</li></ul>
+<p>La dashboard sul computer è disponibile su <a href="http://localhost:8000/app/">localhost:8000/app/</a>; è separata dall&#x27;app mobile. Per una presentazione di riserva aprire <code>exports/sefty_demo.html</code>: le slide non richiedono il backend, ma non sostituiscono la demo interattiva.</p>
+<h3>7. Spegnere e conservare i dati</h3>
+<p>Nel terminale della demo premere <strong>Ctrl+C</strong>. Poi eseguire:</p>
+<pre><code>npm run demo:stop</code></pre>
+<p>Account, contatti, gruppi e altri dati rimangono nel volume Docker del computer. Non vengono ricreati a ogni avvio. <strong>Non usare <code>docker compose down -v</code> e non eliminare il volume del database da Docker Desktop.</strong></p>
+<p>Su un nuovo computer il database parte vuoto: copiare la cartella non trasferisce gli account Sefty. Per mantenere gli stessi dati occorre un backup e ripristino del database. L&#x27;accesso allo stesso account Expo non sincronizza i dati Sefty.</p>
+<h3>8. Problemi più comuni</h3>
+<div class="demo-table" role="region" aria-label="Problemi più comuni" tabindex="0"><table><thead><tr><th scope="col">Problema</th><th scope="col">Operazione</th></tr></thead><tbody><tr><td>Account Expo mancante o diverso tra computer e telefono</td><td>Fermare la demo, eseguire<code>npm run demo:login</code>, verificare <code>npm run demo:account</code> e accedere allo stesso account in Expo Go. Riavviare e scansionare il nuovo QR.</td></tr><tr><td>Docker non disponibile</td><td>Aprire Docker Desktop, attendere il motore avviato e ripetere<code>npm run demo</code>. Su Windows usare i container Linux.</td></tr><tr><td><code>npm.ps1</code> bloccato</td><td>Usare<code>npm.cmd</code> al posto di <code>npm</code>.</td></tr><tr><td>Porta già occupata</td><td>Fermare la precedente istanza di Expo con Ctrl+C prima di riavviare.</td></tr><tr><td>Errore del tunnel, anche<code>reading &#x27;body&#x27;</code></td><td>Fermare e ripetere<code>npm run demo</code>. Se persiste, controllare Internet e provare un&#x27;altra rete.</td></tr><tr><td>Il QR apre Sefty, ma l&#x27;accesso interno fallisce</td><td>Da un secondo terminale eseguire<code>npm run demo:check</code>. Verificare credenziali Sefty e computer che ospita il database.</td></tr><tr><td>App incompatibile con Expo Go</td><td>Controllare SDK 57 e seguire le<a href="https://docs.expo.dev/troubleshooting/expo-go-version-mismatch/">istruzioni Expo</a>.</td></tr><tr><td>Password del database non valida</td><td>Conservare o ripristinare il file<code>sefty-backend/.env</code> associato al database. Non eliminare il volume.</td></tr><tr><td>Schermata non aggiornata</td><td>Fermare la demo, riavviare e scansionare il nuovo QR.</td></tr></tbody></table></div>
+<h3>9. Un altro computer o un aggiornamento</h3>
+<p>Usare una copia dei sorgenti senza <code>node_modules</code>, <code>.expo</code>, <code>.npm-cache</code>, <code>dist-review</code> e log. Non sovrascrivere <code>sefty-backend/.env</code> di un&#x27;installazione esistente: contiene la configurazione del suo database.</p>
+<p>Su un computer nuovo ripetere la preparazione e <code>npm run demo:login</code>. Il file <code>.env</code> del backend viene creato automaticamente se manca.</p>
+<p>Per questo aggiornamento le dipendenze restano identiche alla prima consegna. Dopo aver copiato i file nella cartella esistente basta:</p>
+<pre><code>npm run demo</code></pre>
+<p>In una cartella appena estratta, lo stesso comando installa automaticamente le dipendenze mancanti.</p>
+<p>Su Linux servono Docker Engine con Compose v2 e Node.js; i comandi sono gli stessi. PostGIS richiede amd64: su Linux ARM serve l&#x27;emulazione, gestita invece da Docker Desktop sui Mac Apple Silicon. I test automatici sono stati eseguiti su Windows; resta necessaria la prova sul computer e sui telefoni scelti.</p>
+</section>
             </div>
         </div>
     </main>
@@ -354,6 +280,7 @@
                         <li><a href="community.html">Community</a></li>
                         <li><a href="visione.html">Visione</a></li>
                         <li><a href="progetto.html">Progetto</a></li>
+                        <li><a href="istruzioni.html">Guida applicazione</a></li>
                     </ul>
                 </nav>
             </div>
